@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 # #Arrange
-# user = User.create!(email: 'admin@admin.com', password: '123456')
 
 # #Act
 # visit root_path
@@ -13,6 +12,8 @@ require 'rails_helper'
 
 feature 'User update recipe' do
   scenario 'successfully' do
+   user = User.create!(email: 'admin@admin.com', password: '123456')
+
     recipe_type = RecipeType.create(name: 'Sobremesa')
     RecipeType.create(name: 'Entrada')
     Recipe.create(title: 'Bolodecenoura', difficulty: 'Médio',
