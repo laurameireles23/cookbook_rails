@@ -1,3 +1,4 @@
 tmp/
 log/test.log
 tmp/cache/bootsnap-load-path-cache
+log/

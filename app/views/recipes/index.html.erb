@@ -10,3 +10,7 @@
 <%= render partial: 'recipe', collection: @recipes %>
 
 <h1><%= link_to 'Enviar tipo de receita', new_recipe_type_path %></h1>
+
+<% @recipe_types.each do |types| %>
+  <h3><%= link_to types.name, types %></h3>
+<% end %>

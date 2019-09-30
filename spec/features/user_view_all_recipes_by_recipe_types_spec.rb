@@ -23,7 +23,7 @@ feature 'User view all recipes by recipe types' do
     #Assert
     expect(page).to have_css('h3', text: 'Sobremesa')
     expect(page).to have_css('h1', text: 'Bolo de cenoura')
-    expect(page).not_to have_css('h1', text: 'Tapioca apimentada')
+    expect(page).not_to have_css('h3', text: 'Tapioca apimentada')
     
     end
 

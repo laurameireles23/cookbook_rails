@@ -3,6 +3,7 @@ class RecipesController < ApplicationController
 
   def index
     @recipes = Recipe.all
+    @recipe_types = RecipeType.all
   end
 
   def show; end
