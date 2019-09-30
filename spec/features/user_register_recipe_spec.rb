@@ -1,13 +1,25 @@
 require 'rails_helper'
 
 feature 'User register recipe' do
+  scenario 'cannot create logged out' do
+    visit root_path
+
+    expect(page).not_to have_link('Enviar uma receita')  
+  end
+
   scenario 'successfully' do
     #cria os dados necessários, nesse caso não vamos criar dados no banco
+    #Arrange
+    user = User.create!(email: 'admin@admin.com', password: '123456')    
     RecipeType.create(name: 'Sobremesa')
     RecipeType.create(name: 'Entrada')
 
     # simula a ação do usuário
     visit root_path
+    click_on 'Fazer Login'
+    fill_in "E-mail", with: "admin@admin.com"
+    fill_in "Senha", with: "123456"
+    click_on 'Logar'
     click_on 'Enviar uma receita'
 
     fill_in 'Título', with: 'Tabule'
@@ -21,6 +33,7 @@ feature 'User register recipe' do
 
 
     # expectativas
+    expect(page).to have_css('h2', text: 'Receita cadastrada por admin@admin.com')
     expect(page).to have_css('h1', text: 'Tabule')
     expect(page).to have_css('h3', text: 'Detalhes')
     expect(page).to have_css('p', text: 'Entrada')

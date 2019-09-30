@@ -1,5 +1,16 @@
 require 'rails_helper'
 
+# #Arrange
+# user = User.create!(email: 'admin@admin.com', password: '123456')
+
+# #Act
+# visit root_path
+# click_on 'Fazer Login'
+# fill_in "E-mail", with: "admin@admin.com"
+# fill_in "Senha", with: "123456"
+# click_on 'Logar'
+# click_on 'Logout'
+
 feature 'User update recipe' do
   scenario 'successfully' do
     recipe_type = RecipeType.create(name: 'Sobremesa')
