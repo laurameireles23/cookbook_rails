@@ -1,16 +1,12 @@
-<h3>Nome</h3>
-
-<h3><%= @recipe_type.name %></h3>
-
-<%= link_to 'Voltar', root_path %>
-
-
+<h1>Titulo: <%= @recipe_type.name %></h1>
 
 <% @recipe_type.recipes.each do |recipe| %>
-    <h1><%= recipe.title %></h1>
+    <h2><%= recipe.title %></h2>
     <ul>
         <li><%= recipe.cuisine %></li>
         <li><%= recipe.difficulty %></li>
         <li><%= "#{recipe.cook_time} minutos" %></li>
     </ul>
   <% end %>
+
+<%= link_to 'Voltar', root_path %>
