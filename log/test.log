@@ -27057,3 +27057,1012 @@ Processing by RecipesController#index as HTML
   Rendered recipes/index.html.erb within layouts/application (1.9ms)
 Completed 200 OK in 138ms (Views: 133.5ms | ActiveRecord: 0.2ms)
   [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2019-10-01 14:48:47 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered collection of recipes/_recipe.html.erb [0 times] (0.0ms)
+  [1m[36mRecipeType Load (0.0ms)[0m  [1m[34mSELECT "recipe_types".* FROM "recipe_types"[0m
+  Rendered recipes/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 112ms (Views: 102.1ms | ActiveRecord: 0.8ms)
+Started GET "/recipe_types/new" for 127.0.0.1 at 2019-10-01 14:48:47 -0300
+Processing by RecipeTypesController#new as HTML
+  Rendering recipe_types/new.html.erb within layouts/application
+  Rendered recipe_types/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 9ms (Views: 6.8ms | ActiveRecord: 0.2ms)
+Started POST "/recipe_types" for 127.0.0.1 at 2019-10-01 14:48:47 -0300
+Processing by RecipeTypesController#create as HTML
+  Parameters: {"utf8"=>"✓", "recipe_type"=>{"name"=>"Sobremesa"}, "commit"=>"Enviar"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipeType Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "recipe_types" WHERE "recipe_types"."name" = ? LIMIT ?[0m  [["name", "Sobremesa"], ["LIMIT", 1]]
+  [1m[36mRecipeType Create (0.1ms)[0m  [1m[32mINSERT INTO "recipe_types" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2019-10-01 17:48:47.408903"], ["updated_at", "2019-10-01 17:48:47.408903"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/recipe_types/1
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+Started GET "/recipe_types/1" for 127.0.0.1 at 2019-10-01 14:48:47 -0300
+Processing by RecipeTypesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipeType Load (0.1ms)[0m  [1m[34mSELECT  "recipe_types".* FROM "recipe_types" WHERE "recipe_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipe_types/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."recipe_type_id" = ?[0m  [["recipe_type_id", 1]]
+  Rendered recipe_types/show.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipeType Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "recipe_types" WHERE "recipe_types"."name" = ? LIMIT ?[0m  [["name", "Sobremesa"], ["LIMIT", 1]]
+  [1m[36mRecipeType Create (0.1ms)[0m  [1m[32mINSERT INTO "recipe_types" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2019-10-01 17:48:47.420063"], ["updated_at", "2019-10-01 17:48:47.420063"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2019-10-01 14:48:47 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered collection of recipes/_recipe.html.erb [0 times] (0.0ms)
+  [1m[36mRecipeType Load (0.0ms)[0m  [1m[34mSELECT "recipe_types".* FROM "recipe_types"[0m
+  Rendered recipes/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.1ms)
+Started GET "/recipe_types/new" for 127.0.0.1 at 2019-10-01 14:48:47 -0300
+Processing by RecipeTypesController#new as HTML
+  Rendering recipe_types/new.html.erb within layouts/application
+  Rendered recipe_types/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+Started POST "/recipe_types" for 127.0.0.1 at 2019-10-01 14:48:47 -0300
+Processing by RecipeTypesController#create as HTML
+  Parameters: {"utf8"=>"✓", "recipe_type"=>{"name"=>"Sobremesa"}, "commit"=>"Enviar"}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipeType Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "recipe_types" WHERE "recipe_types"."name" = ? LIMIT ?[0m  [["name", "Sobremesa"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering recipe_types/new.html.erb within layouts/application
+  Rendered recipe_types/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 6ms (Views: 1.2ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipe_types"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@admin.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "admin@admin.com"], ["encrypted_password", "$2a$04$Sde.53ysrJAvVYqSUkLy9.3flDh2FwsGOdToMJK0lDyWqy3M0pgau"], ["created_at", "2019-10-01 17:48:47.444761"], ["updated_at", "2019-10-01 17:48:47.444761"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2019-10-01 14:48:47 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered collection of recipes/_recipe.html.erb [0 times] (0.0ms)
+  [1m[36mRecipeType Load (0.0ms)[0m  [1m[34mSELECT "recipe_types".* FROM "recipe_types"[0m
+  Rendered recipes/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms)
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-10-01 14:48:47 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-10-01 14:48:47 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Logar"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@admin.com"], ["LIMIT", 1]]
+Redirected to http://www.example.com/
+Completed 302 Found in 5ms (ActiveRecord: 0.1ms)
+Started GET "/" for 127.0.0.1 at 2019-10-01 14:48:47 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered collection of recipes/_recipe.html.erb [0 times] (0.0ms)
+  [1m[36mRecipeType Load (0.0ms)[0m  [1m[34mSELECT "recipe_types".* FROM "recipe_types"[0m
+  Rendered recipes/index.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@admin.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "admin@admin.com"], ["encrypted_password", "$2a$04$YbtC6k043OPA8LBX9NUo5ub2FH03DgGiaao.wxvdJH0Togb/aCKj6"], ["created_at", "2019-10-01 17:48:47.493927"], ["updated_at", "2019-10-01 17:48:47.493927"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2019-10-01 14:48:47 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered collection of recipes/_recipe.html.erb [0 times] (0.0ms)
+  [1m[36mRecipeType Load (0.0ms)[0m  [1m[34mSELECT "recipe_types".* FROM "recipe_types"[0m
+  Rendered recipes/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.1ms)
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-10-01 14:48:47 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-10-01 14:48:47 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Logar"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@admin.com"], ["LIMIT", 1]]
+Redirected to http://www.example.com/
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+Started GET "/" for 127.0.0.1 at 2019-10-01 14:48:47 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered collection of recipes/_recipe.html.erb [0 times] (0.0ms)
+  [1m[36mRecipeType Load (0.0ms)[0m  [1m[34mSELECT "recipe_types".* FROM "recipe_types"[0m
+  Rendered recipes/index.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.1ms)
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2019-10-01 14:48:47 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+Started GET "/" for 127.0.0.1 at 2019-10-01 14:48:47 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered collection of recipes/_recipe.html.erb [0 times] (0.0ms)
+  [1m[36mRecipeType Load (0.0ms)[0m  [1m[34mSELECT "recipe_types".* FROM "recipe_types"[0m
+  Rendered recipes/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2019-10-01 14:48:47 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered collection of recipes/_recipe.html.erb [0 times] (0.0ms)
+  [1m[36mRecipeType Load (0.0ms)[0m  [1m[34mSELECT "recipe_types".* FROM "recipe_types"[0m
+  Rendered recipes/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.1ms)
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-10-01 14:48:47 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.3ms)
+  Rendered devise/shared/_links.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2019-10-01 14:48:47 -0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Criar"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@admin.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "admin@admin.com"], ["encrypted_password", "$2a$04$mfC4BDTW9vRI0XIz5NDia.RZ5KtvJLoD9stgbwVFE2TbppDlE2C7a"], ["created_at", "2019-10-01 17:48:47.543384"], ["updated_at", "2019-10-01 17:48:47.543384"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+Started GET "/" for 127.0.0.1 at 2019-10-01 14:48:47 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered collection of recipes/_recipe.html.erb [0 times] (0.0ms)
+  [1m[36mRecipeType Load (0.0ms)[0m  [1m[34mSELECT "recipe_types".* FROM "recipe_types"[0m
+  Rendered recipes/index.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@admin.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "admin@admin.com"], ["encrypted_password", "$2a$04$bsB/V4MEnLyZX68fgySRX.XcbbiBYTCnfA0hN6Jgm1LNMLH1m1dCq"], ["created_at", "2019-10-01 17:48:47.554538"], ["updated_at", "2019-10-01 17:48:47.554538"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipeType Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "recipe_types" WHERE "recipe_types"."name" = ? LIMIT ?[0m  [["name", "Sobremesa"], ["LIMIT", 1]]
+  [1m[36mRecipeType Create (0.1ms)[0m  [1m[32mINSERT INTO "recipe_types" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2019-10-01 17:48:47.556046"], ["updated_at", "2019-10-01 17:48:47.556046"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipeType Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "recipe_types" WHERE "recipe_types"."name" = ? LIMIT ?[0m  [["name", "Entrada"], ["LIMIT", 1]]
+  [1m[36mRecipeType Create (0.1ms)[0m  [1m[32mINSERT INTO "recipe_types" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entrada"], ["created_at", "2019-10-01 17:48:47.557345"], ["updated_at", "2019-10-01 17:48:47.557345"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2019-10-01 14:48:47 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered collection of recipes/_recipe.html.erb [0 times] (0.0ms)
+  [1m[36mRecipeType Load (0.0ms)[0m  [1m[34mSELECT "recipe_types".* FROM "recipe_types"[0m
+  Rendered recipes/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipeType Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "recipe_types" WHERE "recipe_types"."name" = ? LIMIT ?[0m  [["name", "Sobremesa"], ["LIMIT", 1]]
+  [1m[36mRecipeType Create (0.1ms)[0m  [1m[32mINSERT INTO "recipe_types" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2019-10-01 17:48:47.574714"], ["updated_at", "2019-10-01 17:48:47.574714"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2019-10-01 14:48:47 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered collection of recipes/_recipe.html.erb [0 times] (0.0ms)
+  [1m[36mRecipeType Load (0.0ms)[0m  [1m[34mSELECT "recipe_types".* FROM "recipe_types"[0m
+  Rendered recipes/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipeType Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "recipe_types" WHERE "recipe_types"."name" = ? LIMIT ?[0m  [["name", "Sobremesa"], ["LIMIT", 1]]
+  [1m[36mRecipeType Create (0.1ms)[0m  [1m[32mINSERT INTO "recipe_types" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2019-10-01 17:48:47.583503"], ["updated_at", "2019-10-01 17:48:47.583503"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2019-10-01 14:48:47 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered collection of recipes/_recipe.html.erb [0 times] (0.0ms)
+  [1m[36mRecipeType Load (0.0ms)[0m  [1m[34mSELECT "recipe_types".* FROM "recipe_types"[0m
+  Rendered recipes/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.1ms)
+Started GET "/search?utf8=%E2%9C%93&search=Bolo+de+abobora&commit=Buscar" for 127.0.0.1 at 2019-10-01 14:48:47 -0300
+Processing by RecipesController#search as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Bolo de abobora", "commit"=>"Buscar"}
+  Rendering recipes/search.html.erb within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE (title LIKE '%Bolo de abobora%')[0m
+  Rendered recipes/search.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2019-10-01 14:48:47 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered collection of recipes/_recipe.html.erb [0 times] (0.0ms)
+  [1m[36mRecipeType Load (0.0ms)[0m  [1m[34mSELECT "recipe_types".* FROM "recipe_types"[0m
+  Rendered recipes/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.1ms)
+Started GET "/search?utf8=%E2%9C%93&search=Bolo+de+Batata&commit=Buscar" for 127.0.0.1 at 2019-10-01 14:48:47 -0300
+Processing by RecipesController#search as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Bolo de Batata", "commit"=>"Buscar"}
+  Rendering recipes/search.html.erb within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE (title LIKE '%Bolo de Batata%')[0m
+  Rendered recipes/search.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipeType Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "recipe_types" WHERE "recipe_types"."name" = ? LIMIT ?[0m  [["name", "Sobremesa"], ["LIMIT", 1]]
+  [1m[36mRecipeType Create (0.1ms)[0m  [1m[32mINSERT INTO "recipe_types" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2019-10-01 17:48:47.617076"], ["updated_at", "2019-10-01 17:48:47.617076"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2019-10-01 14:48:47 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered collection of recipes/_recipe.html.erb [0 times] (0.0ms)
+  [1m[36mRecipeType Load (0.0ms)[0m  [1m[34mSELECT "recipe_types".* FROM "recipe_types"[0m
+  Rendered recipes/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms)
+Started GET "/search?utf8=%E2%9C%93&search=Bolo&commit=Buscar" for 127.0.0.1 at 2019-10-01 14:48:47 -0300
+Processing by RecipesController#search as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Bolo", "commit"=>"Buscar"}
+  Rendering recipes/search.html.erb within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE (title LIKE '%Bolo%')[0m
+  Rendered recipes/search.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2019-10-01 14:48:47 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered collection of recipes/_recipe.html.erb [0 times] (0.0ms)
+  [1m[36mRecipeType Load (0.0ms)[0m  [1m[34mSELECT "recipe_types".* FROM "recipe_types"[0m
+  Rendered recipes/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@admin.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "admin@admin.com"], ["encrypted_password", "$2a$04$VL3TvH4xpSbUujhttphSNu451p3Wby9ucLlEk5y568si.dtphNadu"], ["created_at", "2019-10-01 17:48:47.634197"], ["updated_at", "2019-10-01 17:48:47.634197"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipeType Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "recipe_types" WHERE "recipe_types"."name" = ? LIMIT ?[0m  [["name", "Sobremesa"], ["LIMIT", 1]]
+  [1m[36mRecipeType Create (0.1ms)[0m  [1m[32mINSERT INTO "recipe_types" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2019-10-01 17:48:47.635586"], ["updated_at", "2019-10-01 17:48:47.635586"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipeType Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "recipe_types" WHERE "recipe_types"."name" = ? LIMIT ?[0m  [["name", "Entrada"], ["LIMIT", 1]]
+  [1m[36mRecipeType Create (0.1ms)[0m  [1m[32mINSERT INTO "recipe_types" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entrada"], ["created_at", "2019-10-01 17:48:47.636537"], ["updated_at", "2019-10-01 17:48:47.636537"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2019-10-01 14:48:47 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered collection of recipes/_recipe.html.erb [0 times] (0.0ms)
+  [1m[36mRecipeType Load (0.0ms)[0m  [1m[34mSELECT "recipe_types".* FROM "recipe_types"[0m
+  Rendered recipes/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms)
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-10-01 14:48:47 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-10-01 14:48:47 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Logar"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@admin.com"], ["LIMIT", 1]]
+Redirected to http://www.example.com/
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+Started GET "/" for 127.0.0.1 at 2019-10-01 14:48:47 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered collection of recipes/_recipe.html.erb [0 times] (0.0ms)
+  [1m[36mRecipeType Load (0.0ms)[0m  [1m[34mSELECT "recipe_types".* FROM "recipe_types"[0m
+  Rendered recipes/index.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.1ms)
+Started GET "/recipes/new" for 127.0.0.1 at 2019-10-01 14:48:47 -0300
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.erb within layouts/application
+  [1m[36mRecipeType Load (0.1ms)[0m  [1m[34mSELECT "recipe_types".* FROM "recipe_types"[0m
+  Rendered recipes/_form.html.erb (2.2ms)
+  Rendered recipes/new.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.1ms)
+Started POST "/recipes" for 127.0.0.1 at 2019-10-01 14:48:47 -0300
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "recipe"=>{"title"=>"Tabule", "recipe_type_id"=>"2", "cuisine"=>"Arabe", "difficulty"=>"Fácil", "cook_time"=>"45", "ingredients"=>"Trigo para quibe, cebola, tomate picado, azeite, salsinha", "cook_method"=>"Misturar tudo e servir. Adicione limão a gosto."}, "commit"=>"Enviar"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipeType Load (0.0ms)[0m  [1m[34mSELECT  "recipe_types".* FROM "recipe_types" WHERE "recipe_types"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRecipe Create (0.1ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "cuisine", "difficulty", "cook_time", "created_at", "updated_at", "cook_method", "ingredients", "recipe_type_id", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Tabule"], ["cuisine", "Arabe"], ["difficulty", "Fácil"], ["cook_time", 45], ["created_at", "2019-10-01 17:48:47.681683"], ["updated_at", "2019-10-01 17:48:47.681683"], ["cook_method", "Misturar tudo e servir. Adicione limão a gosto."], ["ingredients", "Trigo para quibe, cebola, tomate picado, azeite, salsinha"], ["recipe_type_id", 2], ["user_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/recipes/1
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+Started GET "/recipes/1" for 127.0.0.1 at 2019-10-01 14:48:47 -0300
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipeType Load (0.0ms)[0m  [1m[34mSELECT  "recipe_types".* FROM "recipe_types" WHERE "recipe_types"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered recipes/show.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2019-10-01 14:48:47 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered collection of recipes/_recipe.html.erb [0 times] (0.0ms)
+  [1m[36mRecipeType Load (0.0ms)[0m  [1m[34mSELECT "recipe_types".* FROM "recipe_types"[0m
+  Rendered recipes/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipeType Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "recipe_types" WHERE "recipe_types"."name" = ? LIMIT ?[0m  [["name", "Sobremesa"], ["LIMIT", 1]]
+  [1m[36mRecipeType Create (0.1ms)[0m  [1m[32mINSERT INTO "recipe_types" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2019-10-01 17:48:47.706084"], ["updated_at", "2019-10-01 17:48:47.706084"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipeType Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "recipe_types" WHERE "recipe_types"."name" = ? LIMIT ?[0m  [["name", "Entrada"], ["LIMIT", 1]]
+  [1m[36mRecipeType Create (0.1ms)[0m  [1m[32mINSERT INTO "recipe_types" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entrada"], ["created_at", "2019-10-01 17:48:47.708074"], ["updated_at", "2019-10-01 17:48:47.708074"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2019-10-01 14:48:47 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered collection of recipes/_recipe.html.erb [0 times] (0.0ms)
+  [1m[36mRecipeType Load (0.0ms)[0m  [1m[34mSELECT "recipe_types".* FROM "recipe_types"[0m
+  Rendered recipes/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms)
+Started GET "/recipe_types/1" for 127.0.0.1 at 2019-10-01 14:48:47 -0300
+Processing by RecipeTypesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipeType Load (0.0ms)[0m  [1m[34mSELECT  "recipe_types".* FROM "recipe_types" WHERE "recipe_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipe_types/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."recipe_type_id" = ?[0m  [["recipe_type_id", 1]]
+  Rendered recipe_types/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipeType Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "recipe_types" WHERE "recipe_types"."name" = ? LIMIT ?[0m  [["name", "Sobremesa"], ["LIMIT", 1]]
+  [1m[36mRecipeType Create (0.1ms)[0m  [1m[32mINSERT INTO "recipe_types" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2019-10-01 17:48:47.719359"], ["updated_at", "2019-10-01 17:48:47.719359"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2019-10-01 14:48:47 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered collection of recipes/_recipe.html.erb [0 times] (0.0ms)
+  [1m[36mRecipeType Load (0.0ms)[0m  [1m[34mSELECT "recipe_types".* FROM "recipe_types"[0m
+  Rendered recipes/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipeType Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "recipe_types" WHERE "recipe_types"."name" = ? LIMIT ?[0m  [["name", "Sobremesa"], ["LIMIT", 1]]
+  [1m[36mRecipeType Create (0.1ms)[0m  [1m[32mINSERT INTO "recipe_types" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2019-10-01 17:48:47.726147"], ["updated_at", "2019-10-01 17:48:47.726147"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2019-10-01 14:48:47 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered collection of recipes/_recipe.html.erb [0 times] (0.0ms)
+  [1m[36mRecipeType Load (0.0ms)[0m  [1m[34mSELECT "recipe_types".* FROM "recipe_types"[0m
+  Rendered recipes/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2019-10-01 14:48:47 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered collection of recipes/_recipe.html.erb [0 times] (0.0ms)
+  [1m[36mRecipeType Load (0.0ms)[0m  [1m[34mSELECT "recipe_types".* FROM "recipe_types"[0m
+  Rendered recipes/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipeType Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "recipe_types" WHERE "recipe_types"."name" = ? LIMIT ?[0m  [["name", "Sobremesa"], ["LIMIT", 1]]
+  [1m[36mRecipeType Create (0.1ms)[0m  [1m[32mINSERT INTO "recipe_types" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2019-10-01 17:48:47.739319"], ["updated_at", "2019-10-01 17:48:47.739319"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2019-10-01 14:48:47 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered collection of recipes/_recipe.html.erb [0 times] (0.0ms)
+  [1m[36mRecipeType Load (0.0ms)[0m  [1m[34mSELECT "recipe_types".* FROM "recipe_types"[0m
+  Rendered recipes/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipeType Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "recipe_types" WHERE "recipe_types"."name" = ? LIMIT ?[0m  [["name", "Sobremesa"], ["LIMIT", 1]]
+  [1m[36mRecipeType Create (0.1ms)[0m  [1m[32mINSERT INTO "recipe_types" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2019-10-01 17:48:47.746085"], ["updated_at", "2019-10-01 17:48:47.746085"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipeType Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "recipe_types" WHERE "recipe_types"."name" = ? LIMIT ?[0m  [["name", "Prato principal"], ["LIMIT", 1]]
+  [1m[36mRecipeType Create (0.0ms)[0m  [1m[32mINSERT INTO "recipe_types" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Prato principal"], ["created_at", "2019-10-01 17:48:47.747039"], ["updated_at", "2019-10-01 17:48:47.747039"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2019-10-01 14:48:47 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered collection of recipes/_recipe.html.erb [0 times] (0.0ms)
+  [1m[36mRecipeType Load (0.0ms)[0m  [1m[34mSELECT "recipe_types".* FROM "recipe_types"[0m
+  Rendered recipes/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2019-10-01 14:49:17 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered collection of recipes/_recipe.html.erb [0 times] (0.0ms)
+  [1m[36mRecipeType Load (0.1ms)[0m  [1m[34mSELECT "recipe_types".* FROM "recipe_types"[0m
+  Rendered recipes/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 108ms (Views: 101.0ms | ActiveRecord: 0.5ms)
+Started GET "/recipe_types/new" for 127.0.0.1 at 2019-10-01 14:49:17 -0300
+Processing by RecipeTypesController#new as HTML
+  Rendering recipe_types/new.html.erb within layouts/application
+  Rendered recipe_types/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 6ms (Views: 3.0ms | ActiveRecord: 0.2ms)
+Started POST "/recipe_types" for 127.0.0.1 at 2019-10-01 14:49:17 -0300
+Processing by RecipeTypesController#create as HTML
+  Parameters: {"utf8"=>"✓", "recipe_type"=>{"name"=>"Sobremesa"}, "commit"=>"Enviar"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipeType Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "recipe_types" WHERE "recipe_types"."name" = ? LIMIT ?[0m  [["name", "Sobremesa"], ["LIMIT", 1]]
+  [1m[36mRecipeType Create (0.2ms)[0m  [1m[32mINSERT INTO "recipe_types" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2019-10-01 17:49:17.658705"], ["updated_at", "2019-10-01 17:49:17.658705"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/recipe_types/1
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+Started GET "/recipe_types/1" for 127.0.0.1 at 2019-10-01 14:49:17 -0300
+Processing by RecipeTypesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipeType Load (0.1ms)[0m  [1m[34mSELECT  "recipe_types".* FROM "recipe_types" WHERE "recipe_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipe_types/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."recipe_type_id" = ?[0m  [["recipe_type_id", 1]]
+  Rendered recipe_types/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipeType Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "recipe_types" WHERE "recipe_types"."name" = ? LIMIT ?[0m  [["name", "Sobremesa"], ["LIMIT", 1]]
+  [1m[36mRecipeType Create (0.1ms)[0m  [1m[32mINSERT INTO "recipe_types" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2019-10-01 17:49:17.667272"], ["updated_at", "2019-10-01 17:49:17.667272"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2019-10-01 14:49:17 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered collection of recipes/_recipe.html.erb [0 times] (0.0ms)
+  [1m[36mRecipeType Load (0.0ms)[0m  [1m[34mSELECT "recipe_types".* FROM "recipe_types"[0m
+  Rendered recipes/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.1ms)
+Started GET "/recipe_types/new" for 127.0.0.1 at 2019-10-01 14:49:17 -0300
+Processing by RecipeTypesController#new as HTML
+  Rendering recipe_types/new.html.erb within layouts/application
+  Rendered recipe_types/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+Started POST "/recipe_types" for 127.0.0.1 at 2019-10-01 14:49:17 -0300
+Processing by RecipeTypesController#create as HTML
+  Parameters: {"utf8"=>"✓", "recipe_type"=>{"name"=>"Sobremesa"}, "commit"=>"Enviar"}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipeType Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "recipe_types" WHERE "recipe_types"."name" = ? LIMIT ?[0m  [["name", "Sobremesa"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering recipe_types/new.html.erb within layouts/application
+  Rendered recipe_types/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipe_types"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@admin.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "admin@admin.com"], ["encrypted_password", "$2a$04$raa2nzX2K0K3cuA15l9XkumUxRNBJ7eDQ0S8dCPl.zxxPZQtSGoAW"], ["created_at", "2019-10-01 17:49:17.689011"], ["updated_at", "2019-10-01 17:49:17.689011"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2019-10-01 14:49:17 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered collection of recipes/_recipe.html.erb [0 times] (0.0ms)
+  [1m[36mRecipeType Load (0.0ms)[0m  [1m[34mSELECT "recipe_types".* FROM "recipe_types"[0m
+  Rendered recipes/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.1ms)
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-10-01 14:49:17 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-10-01 14:49:17 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Logar"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@admin.com"], ["LIMIT", 1]]
+Redirected to http://www.example.com/
+Completed 302 Found in 4ms (ActiveRecord: 0.1ms)
+Started GET "/" for 127.0.0.1 at 2019-10-01 14:49:17 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered collection of recipes/_recipe.html.erb [0 times] (0.0ms)
+  [1m[36mRecipeType Load (0.0ms)[0m  [1m[34mSELECT "recipe_types".* FROM "recipe_types"[0m
+  Rendered recipes/index.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@admin.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "admin@admin.com"], ["encrypted_password", "$2a$04$hG1gtovlCZ1rLaXy4wymjuqi49odmtCTTN8Z.J8Kys.489cPGe5Wu"], ["created_at", "2019-10-01 17:49:17.715970"], ["updated_at", "2019-10-01 17:49:17.715970"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2019-10-01 14:49:17 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered collection of recipes/_recipe.html.erb [0 times] (0.0ms)
+  [1m[36mRecipeType Load (0.0ms)[0m  [1m[34mSELECT "recipe_types".* FROM "recipe_types"[0m
+  Rendered recipes/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms)
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-10-01 14:49:17 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-10-01 14:49:17 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Logar"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@admin.com"], ["LIMIT", 1]]
+Redirected to http://www.example.com/
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+Started GET "/" for 127.0.0.1 at 2019-10-01 14:49:17 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered collection of recipes/_recipe.html.erb [0 times] (0.0ms)
+  [1m[36mRecipeType Load (0.0ms)[0m  [1m[34mSELECT "recipe_types".* FROM "recipe_types"[0m
+  Rendered recipes/index.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.1ms)
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2019-10-01 14:49:17 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+Started GET "/" for 127.0.0.1 at 2019-10-01 14:49:17 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered collection of recipes/_recipe.html.erb [0 times] (0.0ms)
+  [1m[36mRecipeType Load (0.0ms)[0m  [1m[34mSELECT "recipe_types".* FROM "recipe_types"[0m
+  Rendered recipes/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2019-10-01 14:49:17 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered collection of recipes/_recipe.html.erb [0 times] (0.0ms)
+  [1m[36mRecipeType Load (0.0ms)[0m  [1m[34mSELECT "recipe_types".* FROM "recipe_types"[0m
+  Rendered recipes/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.1ms)
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-10-01 14:49:17 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.3ms)
+  Rendered devise/shared/_links.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2019-10-01 14:49:17 -0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Criar"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@admin.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "admin@admin.com"], ["encrypted_password", "$2a$04$BfoF27DR7oOFfKCW7Yi6guFyvq2Op5IOKMX5CSWtXMzSyTXI1ALCS"], ["created_at", "2019-10-01 17:49:17.782755"], ["updated_at", "2019-10-01 17:49:17.782755"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+Started GET "/" for 127.0.0.1 at 2019-10-01 14:49:17 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered collection of recipes/_recipe.html.erb [0 times] (0.0ms)
+  [1m[36mRecipeType Load (0.0ms)[0m  [1m[34mSELECT "recipe_types".* FROM "recipe_types"[0m
+  Rendered recipes/index.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@admin.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "admin@admin.com"], ["encrypted_password", "$2a$04$hO3hIa3fG8Y9LGkJG8nGQ./iNv.VMaFqxa4PAwSpklm10Hj1idXju"], ["created_at", "2019-10-01 17:49:17.793542"], ["updated_at", "2019-10-01 17:49:17.793542"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipeType Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "recipe_types" WHERE "recipe_types"."name" = ? LIMIT ?[0m  [["name", "Sobremesa"], ["LIMIT", 1]]
+  [1m[36mRecipeType Create (0.1ms)[0m  [1m[32mINSERT INTO "recipe_types" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2019-10-01 17:49:17.794807"], ["updated_at", "2019-10-01 17:49:17.794807"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipeType Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "recipe_types" WHERE "recipe_types"."name" = ? LIMIT ?[0m  [["name", "Entrada"], ["LIMIT", 1]]
+  [1m[36mRecipeType Create (0.1ms)[0m  [1m[32mINSERT INTO "recipe_types" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entrada"], ["created_at", "2019-10-01 17:49:17.795745"], ["updated_at", "2019-10-01 17:49:17.795745"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2019-10-01 14:49:17 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered collection of recipes/_recipe.html.erb [0 times] (0.0ms)
+  [1m[36mRecipeType Load (0.1ms)[0m  [1m[34mSELECT "recipe_types".* FROM "recipe_types"[0m
+  Rendered recipes/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipeType Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "recipe_types" WHERE "recipe_types"."name" = ? LIMIT ?[0m  [["name", "Sobremesa"], ["LIMIT", 1]]
+  [1m[36mRecipeType Create (0.1ms)[0m  [1m[32mINSERT INTO "recipe_types" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2019-10-01 17:49:17.811426"], ["updated_at", "2019-10-01 17:49:17.811426"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2019-10-01 14:49:17 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered collection of recipes/_recipe.html.erb [0 times] (0.0ms)
+  [1m[36mRecipeType Load (0.0ms)[0m  [1m[34mSELECT "recipe_types".* FROM "recipe_types"[0m
+  Rendered recipes/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipeType Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "recipe_types" WHERE "recipe_types"."name" = ? LIMIT ?[0m  [["name", "Sobremesa"], ["LIMIT", 1]]
+  [1m[36mRecipeType Create (0.1ms)[0m  [1m[32mINSERT INTO "recipe_types" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2019-10-01 17:49:17.819920"], ["updated_at", "2019-10-01 17:49:17.819920"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2019-10-01 14:49:17 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered collection of recipes/_recipe.html.erb [0 times] (0.0ms)
+  [1m[36mRecipeType Load (0.0ms)[0m  [1m[34mSELECT "recipe_types".* FROM "recipe_types"[0m
+  Rendered recipes/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.1ms)
+Started GET "/search?utf8=%E2%9C%93&search=Bolo+de+abobora&commit=Buscar" for 127.0.0.1 at 2019-10-01 14:49:17 -0300
+Processing by RecipesController#search as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Bolo de abobora", "commit"=>"Buscar"}
+  Rendering recipes/search.html.erb within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE (title LIKE '%Bolo de abobora%')[0m
+  Rendered recipes/search.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2019-10-01 14:49:17 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered collection of recipes/_recipe.html.erb [0 times] (0.0ms)
+  [1m[36mRecipeType Load (0.0ms)[0m  [1m[34mSELECT "recipe_types".* FROM "recipe_types"[0m
+  Rendered recipes/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms)
+Started GET "/search?utf8=%E2%9C%93&search=Bolo+de+Batata&commit=Buscar" for 127.0.0.1 at 2019-10-01 14:49:17 -0300
+Processing by RecipesController#search as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Bolo de Batata", "commit"=>"Buscar"}
+  Rendering recipes/search.html.erb within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE (title LIKE '%Bolo de Batata%')[0m
+  Rendered recipes/search.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipeType Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "recipe_types" WHERE "recipe_types"."name" = ? LIMIT ?[0m  [["name", "Sobremesa"], ["LIMIT", 1]]
+  [1m[36mRecipeType Create (0.1ms)[0m  [1m[32mINSERT INTO "recipe_types" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2019-10-01 17:49:17.851484"], ["updated_at", "2019-10-01 17:49:17.851484"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2019-10-01 14:49:17 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered collection of recipes/_recipe.html.erb [0 times] (0.0ms)
+  [1m[36mRecipeType Load (0.0ms)[0m  [1m[34mSELECT "recipe_types".* FROM "recipe_types"[0m
+  Rendered recipes/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.1ms)
+Started GET "/search?utf8=%E2%9C%93&search=Bolo&commit=Buscar" for 127.0.0.1 at 2019-10-01 14:49:17 -0300
+Processing by RecipesController#search as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"Bolo", "commit"=>"Buscar"}
+  Rendering recipes/search.html.erb within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE (title LIKE '%Bolo%')[0m
+  Rendered recipes/search.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2019-10-01 14:49:17 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered collection of recipes/_recipe.html.erb [0 times] (0.0ms)
+  [1m[36mRecipeType Load (0.0ms)[0m  [1m[34mSELECT "recipe_types".* FROM "recipe_types"[0m
+  Rendered recipes/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@admin.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "admin@admin.com"], ["encrypted_password", "$2a$04$BwxfM4wwYEq/ZO3TQp/G7.Dmn4tVk4IxI9nJabqxM36ahwW3cMuVG"], ["created_at", "2019-10-01 17:49:17.886171"], ["updated_at", "2019-10-01 17:49:17.886171"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipeType Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "recipe_types" WHERE "recipe_types"."name" = ? LIMIT ?[0m  [["name", "Sobremesa"], ["LIMIT", 1]]
+  [1m[36mRecipeType Create (0.1ms)[0m  [1m[32mINSERT INTO "recipe_types" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2019-10-01 17:49:17.887780"], ["updated_at", "2019-10-01 17:49:17.887780"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipeType Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "recipe_types" WHERE "recipe_types"."name" = ? LIMIT ?[0m  [["name", "Entrada"], ["LIMIT", 1]]
+  [1m[36mRecipeType Create (0.1ms)[0m  [1m[32mINSERT INTO "recipe_types" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entrada"], ["created_at", "2019-10-01 17:49:17.888990"], ["updated_at", "2019-10-01 17:49:17.888990"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2019-10-01 14:49:17 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered collection of recipes/_recipe.html.erb [0 times] (0.2ms)
+  [1m[36mRecipeType Load (0.0ms)[0m  [1m[34mSELECT "recipe_types".* FROM "recipe_types"[0m
+  Rendered recipes/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.1ms)
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-10-01 14:49:17 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-10-01 14:49:17 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Logar"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@admin.com"], ["LIMIT", 1]]
+Redirected to http://www.example.com/
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+Started GET "/" for 127.0.0.1 at 2019-10-01 14:49:17 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered collection of recipes/_recipe.html.erb [0 times] (0.0ms)
+  [1m[36mRecipeType Load (0.1ms)[0m  [1m[34mSELECT "recipe_types".* FROM "recipe_types"[0m
+  Rendered recipes/index.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.1ms)
+Started GET "/recipes/new" for 127.0.0.1 at 2019-10-01 14:49:17 -0300
+Processing by RecipesController#new as HTML
+  Rendering recipes/new.html.erb within layouts/application
+  [1m[36mRecipeType Load (0.1ms)[0m  [1m[34mSELECT "recipe_types".* FROM "recipe_types"[0m
+  Rendered recipes/_form.html.erb (3.0ms)
+  Rendered recipes/new.html.erb within layouts/application (3.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.1ms)
+Started POST "/recipes" for 127.0.0.1 at 2019-10-01 14:49:17 -0300
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "recipe"=>{"title"=>"Tabule", "recipe_type_id"=>"2", "cuisine"=>"Arabe", "difficulty"=>"Fácil", "cook_time"=>"45", "ingredients"=>"Trigo para quibe, cebola, tomate picado, azeite, salsinha", "cook_method"=>"Misturar tudo e servir. Adicione limão a gosto."}, "commit"=>"Enviar"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipeType Load (0.0ms)[0m  [1m[34mSELECT  "recipe_types".* FROM "recipe_types" WHERE "recipe_types"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRecipe Create (0.1ms)[0m  [1m[32mINSERT INTO "recipes" ("title", "cuisine", "difficulty", "cook_time", "created_at", "updated_at", "cook_method", "ingredients", "recipe_type_id", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Tabule"], ["cuisine", "Arabe"], ["difficulty", "Fácil"], ["cook_time", 45], ["created_at", "2019-10-01 17:49:17.940649"], ["updated_at", "2019-10-01 17:49:17.940649"], ["cook_method", "Misturar tudo e servir. Adicione limão a gosto."], ["ingredients", "Trigo para quibe, cebola, tomate picado, azeite, salsinha"], ["recipe_type_id", 2], ["user_id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/recipes/1
+Completed 302 Found in 6ms (ActiveRecord: 0.3ms)
+Started GET "/recipes/1" for 127.0.0.1 at 2019-10-01 14:49:17 -0300
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipeType Load (0.0ms)[0m  [1m[34mSELECT  "recipe_types".* FROM "recipe_types" WHERE "recipe_types"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered recipes/show.html.erb within layouts/application (2.3ms)
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2019-10-01 14:49:17 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered collection of recipes/_recipe.html.erb [0 times] (0.0ms)
+  [1m[36mRecipeType Load (0.0ms)[0m  [1m[34mSELECT "recipe_types".* FROM "recipe_types"[0m
+  Rendered recipes/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipeType Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "recipe_types" WHERE "recipe_types"."name" = ? LIMIT ?[0m  [["name", "Sobremesa"], ["LIMIT", 1]]
+  [1m[36mRecipeType Create (0.1ms)[0m  [1m[32mINSERT INTO "recipe_types" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2019-10-01 17:49:17.976321"], ["updated_at", "2019-10-01 17:49:17.976321"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipeType Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "recipe_types" WHERE "recipe_types"."name" = ? LIMIT ?[0m  [["name", "Entrada"], ["LIMIT", 1]]
+  [1m[36mRecipeType Create (0.1ms)[0m  [1m[32mINSERT INTO "recipe_types" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entrada"], ["created_at", "2019-10-01 17:49:17.978982"], ["updated_at", "2019-10-01 17:49:17.978982"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2019-10-01 14:49:17 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered collection of recipes/_recipe.html.erb [0 times] (0.0ms)
+  [1m[36mRecipeType Load (0.0ms)[0m  [1m[34mSELECT "recipe_types".* FROM "recipe_types"[0m
+  Rendered recipes/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.1ms)
+Started GET "/recipe_types/1" for 127.0.0.1 at 2019-10-01 14:49:17 -0300
+Processing by RecipeTypesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRecipeType Load (0.1ms)[0m  [1m[34mSELECT  "recipe_types".* FROM "recipe_types" WHERE "recipe_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipe_types/show.html.erb within layouts/application
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."recipe_type_id" = ?[0m  [["recipe_type_id", 1]]
+  Rendered recipe_types/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipeType Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "recipe_types" WHERE "recipe_types"."name" = ? LIMIT ?[0m  [["name", "Sobremesa"], ["LIMIT", 1]]
+  [1m[36mRecipeType Create (0.1ms)[0m  [1m[32mINSERT INTO "recipe_types" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2019-10-01 17:49:18.000845"], ["updated_at", "2019-10-01 17:49:18.000845"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2019-10-01 14:49:18 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered collection of recipes/_recipe.html.erb [0 times] (0.0ms)
+  [1m[36mRecipeType Load (0.0ms)[0m  [1m[34mSELECT "recipe_types".* FROM "recipe_types"[0m
+  Rendered recipes/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipeType Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "recipe_types" WHERE "recipe_types"."name" = ? LIMIT ?[0m  [["name", "Sobremesa"], ["LIMIT", 1]]
+  [1m[36mRecipeType Create (0.1ms)[0m  [1m[32mINSERT INTO "recipe_types" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2019-10-01 17:49:18.008726"], ["updated_at", "2019-10-01 17:49:18.008726"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2019-10-01 14:49:18 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered collection of recipes/_recipe.html.erb [0 times] (0.0ms)
+  [1m[36mRecipeType Load (0.0ms)[0m  [1m[34mSELECT "recipe_types".* FROM "recipe_types"[0m
+  Rendered recipes/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2019-10-01 14:49:18 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered collection of recipes/_recipe.html.erb [0 times] (0.0ms)
+  [1m[36mRecipeType Load (0.0ms)[0m  [1m[34mSELECT "recipe_types".* FROM "recipe_types"[0m
+  Rendered recipes/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipeType Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "recipe_types" WHERE "recipe_types"."name" = ? LIMIT ?[0m  [["name", "Sobremesa"], ["LIMIT", 1]]
+  [1m[36mRecipeType Create (0.1ms)[0m  [1m[32mINSERT INTO "recipe_types" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2019-10-01 17:49:18.022018"], ["updated_at", "2019-10-01 17:49:18.022018"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2019-10-01 14:49:18 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered collection of recipes/_recipe.html.erb [0 times] (0.0ms)
+  [1m[36mRecipeType Load (0.1ms)[0m  [1m[34mSELECT "recipe_types".* FROM "recipe_types"[0m
+  Rendered recipes/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipeType Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "recipe_types" WHERE "recipe_types"."name" = ? LIMIT ?[0m  [["name", "Sobremesa"], ["LIMIT", 1]]
+  [1m[36mRecipeType Create (0.1ms)[0m  [1m[32mINSERT INTO "recipe_types" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2019-10-01 17:49:18.028956"], ["updated_at", "2019-10-01 17:49:18.028956"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipeType Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "recipe_types" WHERE "recipe_types"."name" = ? LIMIT ?[0m  [["name", "Prato principal"], ["LIMIT", 1]]
+  [1m[36mRecipeType Create (0.1ms)[0m  [1m[32mINSERT INTO "recipe_types" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Prato principal"], ["created_at", "2019-10-01 17:49:18.029889"], ["updated_at", "2019-10-01 17:49:18.029889"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2019-10-01 14:49:18 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered collection of recipes/_recipe.html.erb [0 times] (0.0ms)
+  [1m[36mRecipeType Load (0.0ms)[0m  [1m[34mSELECT "recipe_types".* FROM "recipe_types"[0m
+  Rendered recipes/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@admin.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "admin@admin.com"], ["encrypted_password", "$2a$04$r8NmiyeBw8lre0RMUURMVO14VR20VrSx/sV6BP6mJbvSt6BaPrNAm"], ["created_at", "2019-10-01 17:49:26.518322"], ["updated_at", "2019-10-01 17:49:26.518322"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipeType Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "recipe_types" WHERE "recipe_types"."name" = ? LIMIT ?[0m  [["name", "Sobremesa"], ["LIMIT", 1]]
+  [1m[36mRecipeType Create (0.1ms)[0m  [1m[32mINSERT INTO "recipe_types" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sobremesa"], ["created_at", "2019-10-01 17:49:26.523438"], ["updated_at", "2019-10-01 17:49:26.523438"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mRecipeType Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "recipe_types" WHERE "recipe_types"."name" = ? LIMIT ?[0m  [["name", "Entrada"], ["LIMIT", 1]]
+  [1m[36mRecipeType Create (0.1ms)[0m  [1m[32mINSERT INTO "recipe_types" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Entrada"], ["created_at", "2019-10-01 17:49:26.524457"], ["updated_at", "2019-10-01 17:49:26.524457"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2019-10-01 14:49:26 -0300
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  Rendered collection of recipes/_recipe.html.erb [0 times] (0.0ms)
+  [1m[36mRecipeType Load (0.1ms)[0m  [1m[34mSELECT "recipe_types".* FROM "recipe_types"[0m
+  Rendered recipes/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 89ms (Views: 85.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
