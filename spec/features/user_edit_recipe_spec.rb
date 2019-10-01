@@ -16,7 +16,7 @@ feature 'User update recipe' do
 
     recipe_type = RecipeType.create(name: 'Sobremesa')
     RecipeType.create(name: 'Entrada')
-    Recipe.create(title: 'Bolodecenoura', difficulty: 'Médio',
+    Recipe.create(user: user, title: 'Bolodecenoura', difficulty: 'Médio',
                   recipe_type: recipe_type, cuisine: 'Brasileira',
                   cook_time: 50, ingredients: 'Farinha, açucar, cenoura',
                   cook_method: 'Cozinhe a cenoura, corte em pedaços pequenos, misture com o restante dos ingredientes')
@@ -44,8 +44,9 @@ feature 'User update recipe' do
   end
 
   scenario 'and must fill in all fields' do
+    user = User.create!(email: 'admin@admin.com', password: '123456')
     recipe_type = RecipeType.create(name: 'Sobremesa')
-    Recipe.create(title: 'Bolodecenoura', difficulty: 'Médio',
+    Recipe.create(user:user, title: 'Bolodecenoura', difficulty: 'Médio',
                   recipe_type: recipe_type, cuisine: 'Brasileira',
                   cook_time: 50, ingredients: 'Farinha, açucar, cenoura',
                   cook_method: 'Cozinhe a cenoura, corte em pedaços pequenos, misture com o restante dos ingredientes')

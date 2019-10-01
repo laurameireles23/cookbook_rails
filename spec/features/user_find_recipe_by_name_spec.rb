@@ -3,13 +3,14 @@ require 'rails_helper'
 feature 'User find recipe by name' do
     scenario 'find name exact' do
     #Arrange
+    user = User.create!(email: 'admin@admin.com', password: '123456')
     recipe_type = RecipeType.create(name: 'Sobremesa')
-    Recipe.create(title: 'Bolo de cenoura', difficulty: 'Médio',
+    Recipe.create(user: user, title: 'Bolo de cenoura', difficulty: 'Médio',
                   recipe_type: recipe_type, cuisine: 'Brasileira',
                   cook_time: 50, ingredients: 'Farinha, açucar, cenoura',
                   cook_method: 'Cozinhe a cenoura, corte em pedaços pequenos, misture com o restante dos ingredientes')
 
-    Recipe.create(title: 'Bolo de abobora', difficulty: 'Médio',
+    Recipe.create(user: user, title: 'Bolo de abobora', difficulty: 'Médio',
                   recipe_type: recipe_type, cuisine: 'Caiçara',
                   cook_time: 50, ingredients: 'Farinha, açucar, abobora',
                   cook_method: 'Cozinhe a abobora, corte em pedaços pequenos, misture com o restante dos ingredientes')
@@ -39,13 +40,14 @@ feature 'User find recipe by name' do
 
     scenario 'find multiple results by partial name' do
         #Arrange
+        user = User.create!(email: 'admin@admin.com', password: '123456')
         recipe_type = RecipeType.create(name: 'Sobremesa')
-        Recipe.create(title: 'Bolo de cenoura', difficulty: 'Médio',
+        Recipe.create(user: user, title: 'Bolo de cenoura', difficulty: 'Médio',
                       recipe_type: recipe_type, cuisine: 'Brasileira',
                       cook_time: 50, ingredients: 'Farinha, açucar, cenoura',
                       cook_method: 'Cozinhe a cenoura, corte em pedaços pequenos, misture com o restante dos ingredientes')
     
-        Recipe.create(title: 'Bolo de abobora', difficulty: 'Médio',
+        Recipe.create(user: user, title: 'Bolo de abobora', difficulty: 'Médio',
                       recipe_type: recipe_type, cuisine: 'Caiçara',
                       cook_time: 50, ingredients: 'Farinha, açucar, abobora',
                       cook_method: 'Cozinhe a abobora, corte em pedaços pequenos, misture com o restante dos ingredientes')
