@@ -23,6 +23,11 @@ feature 'User update recipe' do
 
     # simula a ação do usuário
     visit root_path
+    click_on 'Fazer Login'
+    fill_in "E-mail", with: "admin@admin.com"
+    fill_in "Senha", with: "123456"
+    click_on 'Logar'
+    
     click_on 'Bolodecenoura'
     click_on 'Editar'
 
@@ -53,6 +58,11 @@ feature 'User update recipe' do
 
     # simula a ação do usuário
     visit root_path
+    click_on 'Fazer Login'
+    fill_in "E-mail", with: "admin@admin.com"
+    fill_in "Senha", with: "123456"
+    click_on 'Logar'
+    
     click_on 'Bolodecenoura'
     click_on 'Editar'
 
