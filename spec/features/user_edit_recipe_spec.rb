@@ -77,13 +77,20 @@ feature 'User update recipe' do
     expect(page).to have_content('Não foi possível salvar a receita')
   end
 
-  scenario 'and not see edit recipe button' do
-    user = User.create(email: 'admin@admin.com', password: '123456')
+  scenario 'and user signed in not see edit recipe button' do
+    user1 = User.create(email: 'admin@admin.com', password: '123456')
+    user2 = User.create(email: 'admin2@admin.com', password: '123456')
     recipe_type = RecipeType.create(name: 'Sobremesa')
 
-    recipe = Recipe.create(user: user, recipe_type: recipe_type, title: 'Torta de banana', ingredients: 'Trigo, açucar, banana e canela', cook_method: 'Misture os ingredientes e ponha para assar', cook_time: 60, difficulty: 'Médio', cuisine: 'Brasileira')
+    recipe = Recipe.create(user: user1, recipe_type: recipe_type, title: 'Torta de banana', ingredients: 'Trigo, açucar, banana e canela', cook_method: 'Misture os ingredientes e ponha para assar', cook_time: 60, difficulty: 'Médio', cuisine: 'Brasileira')
 
     visit root_path
+    
+    click_on 'Fazer Login'
+    fill_in "E-mail", with: "admin2@admin.com"
+    fill_in "Senha", with: "123456"
+    click_on 'Logar'
+
     click_on 'Torta de banana'
     
     expect(page).not_to have_link('Editar')
