@@ -27,7 +27,11 @@ class RecipesController < ApplicationController
   end
 
   def edit
-    @recipe_types = RecipeType.all
+    if current_user != @recipe.user
+      redirect_to root_path
+    else
+      @recipe_types = RecipeType.all
+    end
   end
 
   def update  

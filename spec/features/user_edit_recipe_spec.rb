@@ -96,21 +96,42 @@ feature 'User update recipe' do
     expect(page).not_to have_link('Editar')
   end
 
-  xscenario 'access edit recipe' do
+  scenario 'of other user unsuccessfully' do
       # arrange
-      user = User.create!(email: 'admin@admin.com', password: '123456')
-
+      user1 = User.create!(email: 'admin@admin.com', password: '123456')
+      user2 = User.create!(email: 'admin2@admin.com', password: '123456')
+      recipe_type = RecipeType.create!(name: 'Sobremesa')
+  
+      recipe = Recipe.create!(user: user1, recipe_type: recipe_type, title: 'Torta de banana', ingredients: 'Trigo, açucar, banana e canela', cook_method: 'Misture os ingredientes e ponha para assar', cook_time: 60, difficulty: 'Médio', cuisine: 'Brasileira')
+  
       # Act
+
       visit root_path
+
       click_on 'Fazer Login'
-      fill_in "E-mail", with: "admin@admin.com"
+      fill_in "E-mail", with: "admin2@admin.com"
       fill_in "Senha", with: "123456"
       click_on 'Logar'
-
-      visit my_recipes_path
+      
+      visit edit_recipe_path(recipe)
 
 
       # Assert
+      expect(current_path).to eq(root_path)
+
+  end
+
+  scenario 'Visitor can not see recipe edit button ' do
+    # arrange
+    user1 = User.create!(email: 'admin@admin.com', password: '123456')
+    recipe_type = RecipeType.create!(name: 'Sobremesa')
+    recipe = Recipe.create!(user: user1, recipe_type: recipe_type, title: 'Bolo de sardinha', ingredients: 'Trigo, açucar, banana e canela', cook_method: 'Misture os ingredientes e ponha para assar', cook_time: 60, difficulty: 'Médio', cuisine: 'Brasileira')
+    # Act
+
+    visit recipe_path(recipe)
+
+    # Assert
+    expect(page).not_to have_link('Editar')
 
   end
 end
