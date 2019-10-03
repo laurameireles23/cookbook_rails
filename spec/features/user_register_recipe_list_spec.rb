@@ -10,7 +10,6 @@ feature 'User register recipe list' do
     fill_in "Senha", with: "123456"
     click_on 'Logar'
 
-    click_on 'Minhas listas'
     click_on 'Criar nova lista'
 
     fill_in "Nome", with: "Natal"

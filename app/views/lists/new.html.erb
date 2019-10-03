@@ -1,0 +1,6 @@
+<%= form_with model: @list, local: true do |f| %>
+    <%= f.label :name, 'Nome' %> 
+    <%= f.text_field :name %>
+
+    <%= f.submit 'Criar lista' %>
+<% end %>

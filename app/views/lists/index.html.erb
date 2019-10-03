@@ -1,0 +1,7 @@
+<h1>Minhas listas de receitas</h1>
+
+<% @lists.each do |list| %>
+    <h2><%= list.name %></h2>
+<% end %>
+
+<%= link_to 'Voltar', root_path %>
