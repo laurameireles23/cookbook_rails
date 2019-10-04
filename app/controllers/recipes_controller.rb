@@ -52,12 +52,13 @@ class RecipesController < ApplicationController
   def add_to_list
     @list = List.find(params[:list_id])
     @item = RecipeListItem.new(list_id: params[:list_id], recipe_id: params[:id])
+    @lists = List.all
     if @item.save
       redirect_to @list
       flash[:notice] = 'Receita adicionada a lista com sucesso'
     else
       render :show
-      flash[:notice] = 'Receita com esse nome já adicionada'
+      flash[:notice] = 'Essa receita já foi adicionada anteriormente'
     end
 
   end

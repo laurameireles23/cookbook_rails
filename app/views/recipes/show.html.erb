@@ -1,3 +1,9 @@
+<% if @item.errors.any? %>
+    <% @item.errors.full_messages.each do |msg|%>
+        <p><%= msg %></p>
+    <% end %>
+<% end %>
+
 <h2>Receita cadastrada por <%= @recipe.user.email %></h2>
 <h1><%= @recipe.title %></h1>
 
