@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update] 
-  before_action :set_recipe, only: [:show, :edit, :update]
+  before_action :set_recipe, only: [:show, :edit, :update, :add_to_list]
 
   def index
     @recipes = Recipe.all
@@ -49,6 +49,18 @@ class RecipesController < ApplicationController
     @recipes = Recipe.where('title LIKE ?', "%#{params[:search]}%")
   end
   
+  def add_to_list
+    @list = List.find(params[:list_id])
+    @item = RecipeListItem.new(list_id: params[:list_id], recipe_id: params[:id])
+    if @item.save
+      redirect_to @list
+      flash[:notice] = 'Receita adicionada a lista com sucesso'
+    else
+      render :show
+      flash[:notice] = 'Receita com esse nome já adicionada'
+    end
+
+  end
 
   private
 

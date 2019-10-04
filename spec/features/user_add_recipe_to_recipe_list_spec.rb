@@ -21,7 +21,7 @@ feature 'User add recipe to recipe list' do
         select 'Ação de graças', from: 'Listas'
         click_on 'Adicionar a lista'
 
-        expect(list.recipes).to include(recipe)
+        expect(list.recipe).to include(recipe)
         expect(page).to have_content('Receita adicionada a lista com sucesso')
     end
 end

@@ -18,7 +18,9 @@
     <%= link_to 'Editar', edit_recipe_path(@recipe) %>
 <% end %>
 
-<%= form_with model: [@recipe, @item], local: true do |f| %>
+<%= form_with local: true, url: add_to_list_recipe_path(@recipe), method: :post do |f| %>
+    <%= f.label :list_id, 'Listas' %>
     <%= f.collection_select(:list_id, @lists, :id, :name) %>
+    <%= f.submit 'Adicionar a lista'  %>
 <% end %>
 <%= link_to 'Voltar', root_path %>
