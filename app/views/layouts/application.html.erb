@@ -14,9 +14,14 @@
     <p class="alert"><%= alert %></p>
     <nav>
     <% if user_signed_in? %>
-      <p><%= link_to 'Criar nova lista', new_list_path %><p>
       <p><%= link_to 'Enviar uma receita', new_recipe_path %><p>
+      <% if current_user.lists.any?%>
+        <h1><%= link_to 'Minhas listas de receitas', lists_path %></h1>
+      <% else %>
+        <p><%= link_to 'Criar nova lista', new_list_path %><p>
+      <% end %>
       <p><%= link_to 'Minhas receitas', my_recipes_path %><p>
+
       <p><%= link_to "Logout", destroy_user_session_path, method: :delete %></p>
     <% else %>
       <p><%= link_to "Fazer Login", new_user_session_path %></p>

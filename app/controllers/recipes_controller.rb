@@ -7,7 +7,10 @@ class RecipesController < ApplicationController
     @recipe_types = RecipeType.all
   end
 
-  def show; end
+  def show
+    @item = RecipeListItem.new
+    @lists = List.all
+  end
 
   def new
     @recipe = Recipe.new
@@ -16,8 +19,6 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = current_user.recipes.new(recipe_params)
-    # @recipe = Recipe.new(recipe_params)
-    # @recipe.user = current_user
     if @recipe.save 
       redirect_to @recipe
     else

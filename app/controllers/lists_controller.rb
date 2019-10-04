@@ -1,5 +1,5 @@
 class ListsController < ApplicationController
-    before_action :authenticate_user!, only: [:new, :show] 
+    before_action :authenticate_user!, only: [:new, :show, :create] 
     before_action :set_list, only: [:show]
   
     def index
@@ -11,9 +11,12 @@ class ListsController < ApplicationController
     end
 
     def create
-        @list = List.create(list_params)
-        @lists = List.all
-        redirect_to lists_path
+        @list = current_user.lists.new(list_params)
+        if @list.save 
+          redirect_to @list
+        else 
+          render :new
+        end
     end
 
     def show; end

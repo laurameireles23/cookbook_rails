@@ -17,5 +17,8 @@
 <% if @recipe.user == current_user%>
     <%= link_to 'Editar', edit_recipe_path(@recipe) %>
 <% end %>
-    
+
+<%= form_with model: [@recipe, @item], local: true do |f| %>
+    <%= f.collection_select(:list_id, @lists, :id, :name) %>
+<% end %>
 <%= link_to 'Voltar', root_path %>
