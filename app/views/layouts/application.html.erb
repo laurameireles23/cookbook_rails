@@ -21,7 +21,9 @@
         <p><%= link_to 'Criar nova lista', new_list_path %><p>
       <% end %>
       <p><%= link_to 'Minhas receitas', my_recipes_path %><p>
-
+      <% if current_user.admin? %>
+        <p><%= link_to 'Receitas a serem avaliadas', evaluate_recipes_path %></p>
+      <% end %>
       <p><%= link_to "Logout", destroy_user_session_path, method: :delete %></p>
     <% else %>
       <p><%= link_to "Fazer Login", new_user_session_path %></p>

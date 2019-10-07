@@ -3,11 +3,17 @@ Rails.application.routes.draw do
   root to: 'recipes#index'
   resources :recipes, only: [:index, :show, :new, :create, :edit, :update] do
     post 'add_to_list', on: :member
+    member do
+      post 'approve'
+      post 'reject'
+    end
   end
   resources :recipe_types, only: [:index, :show, :new, :create]
   resources :lists, only: [:index, :show, :new, :create]
 
   get 'search', to: 'recipes#search'
+
+  get 'evaluate_recipes', to: 'recipes#evaluate'
 
   get 'my_recipes', to: 'users#show'
 end

@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update] 
-  before_action :set_recipe, only: [:show, :edit, :update, :add_to_list]
+  before_action :set_recipe, only: [:show, :edit, :update, :add_to_list, :approve, :reject]
 
   def index
     @recipes = Recipe.approved
@@ -61,6 +61,27 @@ class RecipesController < ApplicationController
       flash[:notice] = 'Essa receita já foi adicionada anteriormente'
     end
 
+  end
+
+  def evaluate
+    if current_user.admin?
+      @recipes = Recipe.pending
+      @recipe_types = RecipeType.all
+
+    else
+      redirect_to root_path
+    end
+  end
+
+  def approve
+    @recipe.approved!
+    flash[:notice] = 'Receita aprovada com sucesso'
+    redirect_to evaluate_recipes_path
+  end
+
+  def reject
+    @recipe.rejected!
+    redirect_to evaluate_recipes_path
   end
 
   private

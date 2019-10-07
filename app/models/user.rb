@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
   has_many :recipes
   has_many :lists
+  enum role: {user: 0, admin: 10}
+
 end

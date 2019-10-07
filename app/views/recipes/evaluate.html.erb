@@ -1,0 +1,6 @@
+<% @recipes.each do |recipe| %>
+    <%= render partial: 'recipe', locals: {recipe: recipe} %>
+    <div id="recipe-<%= recipe.id%>">
+    <%= link_to 'Aprovar', approve_recipe_path(recipe), method: :post %>
+    <%= link_to 'Reprovar', reject_recipe_path(recipe), method: :post %>
+<% end %>
