@@ -12,7 +12,12 @@ feature 'Visitor visit homepage' do
     #cria os dados necessários
     user = User.create!(email: 'admin@admin.com', password: '123456')    
     recipe_type = RecipeType.create(name: 'Sobremesa')
-    recipe = Recipe.create(user: user, title: 'Bolo de cenoura', difficulty: 'Médio',
+    pending_recipe = Recipe.create(status: :pending, user: user, title: 'Bolo de cenoura', difficulty: 'Médio',
+                           recipe_type: recipe_type, cuisine: 'Brasileira',
+                           cook_time: 50,
+                           ingredients: 'Farinha, açucar, cenoura',
+                           cook_method: 'Cozinhe a cenoura, corte em pedaços pequenos, misture com o restante dos ingredientes')
+    approved_recipe = Recipe.create(status: :approved, user: user, title: 'Bolo de churros', difficulty: 'Médio',
                            recipe_type: recipe_type, cuisine: 'Brasileira',
                            cook_time: 50,
                            ingredients: 'Farinha, açucar, cenoura',
@@ -22,11 +27,12 @@ feature 'Visitor visit homepage' do
     visit root_path
 
     # expectativas do usuário após a ação
-    expect(page).to have_css('h1', text: recipe.title)
-    expect(page).to have_css('li', text: recipe.recipe_type.name)
-    expect(page).to have_css('li', text: recipe.cuisine)
-    expect(page).to have_css('li', text: recipe.difficulty)
-    expect(page).to have_css('li', text: "#{recipe.cook_time} minutos")
+    expect(page).to_not have_css('h1', text: pending_recipe.title)
+    expect(page).to have_css('h1', text: approved_recipe.title)
+    expect(page).to have_css('li', text: approved_recipe.recipe_type.name)
+    expect(page).to have_css('li', text: approved_recipe.cuisine)
+    expect(page).to have_css('li', text: approved_recipe.difficulty)
+    expect(page).to have_css('li', text: "#{approved_recipe.cook_time} minutos")
   end
 
   scenario 'and view recipes list' do
@@ -34,33 +40,38 @@ feature 'Visitor visit homepage' do
     user = User.create!(email: 'admin@admin.com', password: '123456')
     recipe_type = RecipeType.create(name: 'Sobremesa')
     another_recipe_type = RecipeType.create(name: 'Prato principal')
-    recipe = Recipe.create(user: user, title: 'Bolo de cenoura', difficulty: 'Médio',
+    approved_recipe = Recipe.create(status: :approved, user: user, title: 'Bolo de cenoura', difficulty: 'Médio',
                            recipe_type: recipe_type, cuisine: 'Brasileira',
                            cook_time: 50,
                            ingredients: 'Farinha, açucar, cenoura',
                            cook_method: 'Cozinhe a cenoura, corte em pedaços pequenos, misture com o restante dos ingredientes')
 
-    another_recipe = Recipe.create(user: user, title: 'Feijoada',
+    pending_recipe = Recipe.create(status: :pending, user: user, title: 'Feijoada',
                                    recipe_type: another_recipe_type,
-                                   cuisine: 'Brasileira', difficulty: 'Difícil',
+                                   cuisine: 'Japonesa', difficulty: 'Difícil',
                                    cook_time: 90,
-                                   ingredients: 'Feijão e carnes',
-                                   cook_method: 'Misture o feijão com as carnes')
+                                   ingredients: 'Feijão, carnes, algas e arroz',
+                                   cook_method: 'Misture o sushi com as carnes')
 
     # simula a ação do usuário
     visit root_path
 
     # expectativas do usuário após a ação
-    expect(page).to have_css('h1', text: recipe.title)
-    expect(page).to have_css('li', text: recipe.recipe_type.name)
-    expect(page).to have_css('li', text: recipe.cuisine)
-    expect(page).to have_css('li', text: recipe.difficulty)
-    expect(page).to have_css('li', text: "#{recipe.cook_time} minutos")
+    expect(page).to have_css('h1', text: approved_recipe.title)
+    expect(page).to have_css('li', text: approved_recipe.recipe_type.name)
+    expect(page).to have_css('li', text: approved_recipe.cuisine)
+    expect(page).to have_css('li', text: approved_recipe.difficulty)
+    expect(page).to have_css('li', text: "#{approved_recipe.cook_time} minutos")
 
-    expect(page).to have_css('h1', text: another_recipe.title)
-    expect(page).to have_css('li', text: another_recipe.recipe_type.name)
-    expect(page).to have_css('li', text: another_recipe.cuisine)
-    expect(page).to have_css('li', text: another_recipe.difficulty)
-    expect(page).to have_css('li', text: "#{another_recipe.cook_time} minutos")
+    expect(page).not_to have_css('h1', text: pending_recipe.title)
+    expect(page).not_to have_css('li', text: pending_recipe.recipe_type.name)
+    expect(page).not_to have_css('li', text: pending_recipe.cuisine)
+    expect(page).not_to have_css('li', text: pending_recipe.difficulty)
+    expect(page).not_to have_css('li', text: "#{pending_recipe.cook_time} minutos")
   end
 end
+
+
+# expect(page).not_to have_link 'Aprovar receita' 
+# pending_recipe.reload
+# expect(pending_recipe).to be_approved

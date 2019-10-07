@@ -3,7 +3,7 @@ class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :add_to_list]
 
   def index
-    @recipes = Recipe.all
+    @recipes = Recipe.approved
     @recipe_types = RecipeType.all
   end
 
