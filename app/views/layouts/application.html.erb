@@ -28,9 +28,32 @@
       <p><%= link_to "Criar novo usuário", new_user_registration_path %></p>
     <% end %>
     </nav>
-    <%= yield %>
-    <footer>
-      <p>Social Recipes | Copyright 2019</p>
-    </footer>
+
+    <div class='container'>
+      <%= yield %>
+    </div>
+    </nav>
+    <div class="panel panel-default"  style="background-color: #D3D3D3 !important;">
+        <div class="panel-footer d-flex justify-content-center">
+          Social Recipes | Copyright 2019
+        </div>
+        <hr>
+          <div class="text-center center-block">
+              <p class="txt-railway">- Bootsnipp.com -</p>
+              <br />
+                <a href="https://www.facebook.com/bootsnipp"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
+                <a href="https://twitter.com/bootsnipp"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
+                <a href="https://plus.google.com/+Bootsnipp-page"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
+                <a href="mailto:bootsnipp@gmail.com"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
+          </div>
+          
+        <hr>
+    </div>
+    <div><a href="https://www.facebook.com/bootsnipp"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
+                <a href="https://twitter.com/bootsnipp"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
+                <a href="https://plus.google.com/+Bootsnipp-page"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
+                </div>
+
   </body>
 </html>
+   
