@@ -5,7 +5,7 @@ feature 'User add recipe to recipe list' do
         user = User.create(email: 'admin@admin.com', password: '123456')
         list = List.create(user: user, name: 'Ação de graças')
         recipe_type = RecipeType.create(name: 'Entrada')
-        recipe = Recipe.create(user: user, title: 'Tapioca apimentada', difficulty: 'Dificil',
+        recipe = Recipe.create(status: :approved, user: user, title: 'Tapioca apimentada', difficulty: 'Dificil',
                       recipe_type: recipe_type, cuisine: 'Baiana',
                       cook_time: 50, ingredients: 'Farinha de tapioca, pimenta',
                       cook_method: 'Hidrate a goma, prepare na frigideira a tapioca, encha de pimenta e sirva')
@@ -29,7 +29,7 @@ feature 'User add recipe to recipe list' do
         user = User.create(email: 'admin@admin.com', password: '123456')
         list = List.create(user: user, name: 'Ação de graças')
         recipe_type = RecipeType.create(name: 'Entrada')
-        recipe = Recipe.create(user: user, title: 'Tapioca apimentada', difficulty: 'Dificil',
+        recipe = Recipe.create(status: :approved, user: user, title: 'Tapioca apimentada', difficulty: 'Dificil',
                       recipe_type: recipe_type, cuisine: 'Baiana',
                       cook_time: 50, ingredients: 'Farinha de tapioca, pimenta',
                       cook_method: 'Hidrate a goma, prepare na frigideira a tapioca, encha de pimenta e sirva')

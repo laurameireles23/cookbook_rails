@@ -39,7 +39,7 @@ feature 'Visitor view recipe details' do
     #cria os dados necessários
     user = User.create!(email: 'admin@admin.com', password: '123456')
     recipe_type = RecipeType.create(name: 'Sobremesa')
-    recipe = Recipe.create(user:user, title: 'Bolo de cenoura', recipe_type: recipe_type,
+    recipe = Recipe.create(status: :approved, user:user, title: 'Bolo de cenoura', recipe_type: recipe_type,
                            cuisine: 'Brasileira', difficulty: 'Médio',
                            cook_time: 60,
                            ingredients: 'Farinha, açucar, cenoura',

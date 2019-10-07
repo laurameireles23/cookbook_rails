@@ -1,22 +1,12 @@
 require 'rails_helper'
 
-# #Arrange
-
-# #Act
-# visit root_path
-# click_on 'Fazer Login'
-# fill_in "E-mail", with: "admin@admin.com"
-# fill_in "Senha", with: "123456"
-# click_on 'Logar'
-# click_on 'Logout'
-
 feature 'User update recipe' do
   scenario 'successfully' do
-   user = User.create!(email: 'admin@admin.com', password: '123456')
-
+    user = User.create!(email: 'admin@admin.com', password: '123456')
+    list = List.create(user: user, name: 'Ação de graças')
     recipe_type = RecipeType.create(name: 'Sobremesa')
     RecipeType.create(name: 'Entrada')
-    Recipe.create(user: user, title: 'Bolodecenoura', difficulty: 'Médio',
+    Recipe.create(status: :approved, user: user, title: 'Bolodecenoura', difficulty: 'Médio',
                   recipe_type: recipe_type, cuisine: 'Brasileira',
                   cook_time: 50, ingredients: 'Farinha, açucar, cenoura',
                   cook_method: 'Cozinhe a cenoura, corte em pedaços pequenos, misture com o restante dos ingredientes')
@@ -51,7 +41,7 @@ feature 'User update recipe' do
   scenario 'and must fill in all fields' do
     user = User.create!(email: 'admin@admin.com', password: '123456')
     recipe_type = RecipeType.create(name: 'Sobremesa')
-    Recipe.create(user:user, title: 'Bolodecenoura', difficulty: 'Médio',
+    Recipe.create(status: :approved, user:user, title: 'Bolodecenoura', difficulty: 'Médio',
                   recipe_type: recipe_type, cuisine: 'Brasileira',
                   cook_time: 50, ingredients: 'Farinha, açucar, cenoura',
                   cook_method: 'Cozinhe a cenoura, corte em pedaços pequenos, misture com o restante dos ingredientes')
@@ -82,7 +72,7 @@ feature 'User update recipe' do
     user2 = User.create(email: 'admin2@admin.com', password: '123456')
     recipe_type = RecipeType.create(name: 'Sobremesa')
 
-    recipe = Recipe.create(user: user1, recipe_type: recipe_type, title: 'Torta de banana', ingredients: 'Trigo, açucar, banana e canela', cook_method: 'Misture os ingredientes e ponha para assar', cook_time: 60, difficulty: 'Médio', cuisine: 'Brasileira')
+    recipe = Recipe.create(status: :approved, user: user1, recipe_type: recipe_type, title: 'Torta de banana', ingredients: 'Trigo, açucar, banana e canela', cook_method: 'Misture os ingredientes e ponha para assar', cook_time: 60, difficulty: 'Médio', cuisine: 'Brasileira')
 
     visit root_path
     
