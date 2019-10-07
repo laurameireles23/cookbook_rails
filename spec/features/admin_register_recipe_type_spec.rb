@@ -6,7 +6,7 @@ feature 'Admin register recipe type' do
 
     #Act
     visit root_path
-    click_on 'Enviar tipo de receita'
+    click_on 'Cadastrar receita'
     fill_in "Nome", with: "Sobremesa"
     click_on 'Enviar'
 
@@ -18,7 +18,7 @@ feature 'Admin register recipe type' do
     RecipeType.create!(name: 'Sobremesa')
 
     visit root_path
-    click_on 'Enviar tipo de receita'
+    click_on 'Cadastrar receita'
     fill_in "Nome",	with: "Sobremesa" 
     click_on 'Enviar'
 
