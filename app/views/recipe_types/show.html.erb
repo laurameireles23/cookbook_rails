@@ -1,12 +1,8 @@
 <h1>Titulo: <%= @recipe_type.name %></h1>
 
+<div class="d-flex flex-wrap">
 <% @recipe_type.recipes.each do |recipe| %>
-    <h2><%= recipe.title %></h2>
-    <ul>
-        <li><%= recipe.cuisine %></li>
-        <li><%= recipe.difficulty %></li>
-        <li><%= "#{recipe.cook_time} minutos" %></li>
-    </ul>
+    <%= render partial: 'recipes/recipe', locals: {recipe: recipe} %>
   <% end %>
-
+</div>
 <%= link_to 'Voltar', root_path %>
