@@ -3,7 +3,11 @@ class Api::V1::RecipesController < ActionController::API
     render json: Recipe.where(params.permit(:status))
     # return render json: Recipe.all unless params[:status] && permited_status
     # render json: Recipe.try(params[:status].to_sym)
+  end
 
+  def show
+    @recipe = Recipe.find(params[:id])
+    render json: @recipe
   end
 
   private
