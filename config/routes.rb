@@ -16,4 +16,11 @@ Rails.application.routes.draw do
   get 'evaluate_recipes', to: 'recipes#evaluate'
 
   get 'my_recipes', to: 'users#show'
+
+  namespace 'api' do
+    namespace 'v1' do
+      resources :recipes, only: %i[index]
+    end
+  end
+
 end

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'Recipes Api' do
-    xcontext 'index' do
+    context 'index' do
         it 'and view multiple recipes' do
             user = User.create!(email: 'visit@visit.com', password: '123456', role: :user)
             recipe_type = RecipeType.create(name: 'Entrada')
@@ -18,9 +18,10 @@ describe 'Recipes Api' do
 
             json_recipes = JSON.parse(response.body, symbolize_names: true)
 
-            expect(request).to have_http_status(:ok)
+            expect(response).to have_http_status(:ok)
+            expect(response.content_type).to eq 'application/json'
             expect(json_recipes[0][:title]).to eq 'Tapioca apimentada'
-            expect(json_recipes[1][:title]).to eq 'Tapioca maniçoba'
+            expect(json_recipes[1][:title]).to eq 'Tapioca de maniçoba'
         end    
     end
 end
