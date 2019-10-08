@@ -15,7 +15,7 @@ feature 'User register recipe list' do
     fill_in "Nome", with: "Natal"
     click_on 'Criar lista'
 
-    expect(page).to have_css('h1', text: 'Minhas listas de receitas')
+    expect(page).to have_css('a', text: 'Minhas listas de receitas')
     expect(page).to have_css('h2', text: 'Natal')
     end
 

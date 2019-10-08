@@ -4,6 +4,7 @@
 
 
 <%= form_with model: recipe, local: true do |f| %>
+  <div class="form-group">
     <%= f.label :title, 'Título' %> 
     <%= f.text_field :title %>
     <%= f.label :recipe_type_id, 'Tipo da Receita' %>
@@ -20,4 +21,5 @@
     <%= f.text_field :cook_method %>
 
     <%= f.submit 'Enviar' %>
+    </div>
 <% end %>
