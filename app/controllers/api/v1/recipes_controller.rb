@@ -1,10 +1,15 @@
 class Api::V1::RecipesController < ActionController::API
-  def index 
-    @recipes = Recipe.all 
-    # @recipe_types = RecipeTypes.all
+  def index
+    render json: Recipe.where(params.permit(:status))
+    # return render json: Recipe.all unless params[:status] && permited_status
+    # render json: Recipe.try(params[:status].to_sym)
 
-    render json: @recipes
-
-    # render json: {recipes: @recipes, recipe_types: @recipe_types}.to_json
   end
+
+  private
+  
+  def permited_status
+    Recipe.statuses.include?(params[:status])
+  end
+
 end

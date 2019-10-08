@@ -37,11 +37,11 @@ Recipe.create(user: user, title: 'Torta de abacate', difficulty: 'Médio',
               recipe_type: type_sobremesa, cuisine: 'Estranha',
               cook_time: 50, ingredients: 'Farinha, açucar, abacate',
               cook_method: 'Cozinhe o abacate, corte em pedaços pequenos, misture com o restante dos ingredientes',
-              status: :approved)
+              status: :pending)
 Recipe.create(user: user, title: 'Feijoada', difficulty: 'Difícil',
               recipe_type: type_principal, cuisine: 'Japonesa',
               cook_time: 90,
               ingredients: 'Feijão, carnes, algas e arroz',
               cook_method: 'Misture o sushi com as carnes',
-              status: :approved)
+              status: :pending)
 
