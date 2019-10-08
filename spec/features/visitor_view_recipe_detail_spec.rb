@@ -23,8 +23,7 @@ feature 'Visitor view recipe details' do
     click_on approved_recipe.title
 
     # expectativas do usuário após a ação
-    expect(page).to have_css('h1', text: approved_recipe.title)
-    expect(page).to have_css('h3', text: 'Detalhes')
+    expect(page).to have_css('h3', text: approved_recipe.title)
     expect(page).to have_css('p', text: approved_recipe.recipe_type.name)
     expect(page).to have_css('p', text: approved_recipe.cuisine)
     expect(page).to have_css('p', text: approved_recipe.difficulty)

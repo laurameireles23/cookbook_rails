@@ -4,20 +4,31 @@
     <% end %>
 <% end %>
 
-<h2>Receita cadastrada por <%= @recipe.user.email %></h2>
-<h1><%= @recipe.title %></h1>
+<div class="row">
+    <div class="col col-4">
+        <h3><%= @recipe.title %></h3>
+        <p>Enviada por: <%= @recipe.user.email %></p>
+        <p>Tipo: <%= @recipe.recipe_type.name %></p>
+        <p>Cozinha: <%= @recipe.cuisine %></p>
+        <p>Tempo de preparo:<%= @recipe.cook_time_minutes %></p>
+        <p>Dificuldade: <%= @recipe.difficulty %></p>
+    </div>
+    <div class="col col-8">
+        <!-- Foto da receita -->
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col col-4">
+        <h3>Ingredientes</h3>
+        <p><%= @recipe.ingredients %></p>
+    </div>
+    <div class="col col-8">
+        <h3>Como Preparar</h3>
+        <p><%= @recipe.cook_method %></p>
+    </div>
+</div>
 
-<h3>Detalhes</h3>
-<p><%= @recipe.recipe_type.name %></p>
-<p><%= @recipe.cuisine %></p>
-<p><%= @recipe.difficulty %></p>
-<p><%= @recipe.cook_time_minutes %></p>
-
-<h3>Ingredientes</h3>
-<p><%= @recipe.ingredients %></p>
-
-<h3>Como Preparar</h3>
-<p><%= @recipe.cook_method %></p>
 
 
 <% if @recipe.user == current_user%>
