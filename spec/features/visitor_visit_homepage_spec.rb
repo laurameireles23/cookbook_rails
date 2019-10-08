@@ -27,12 +27,12 @@ feature 'Visitor visit homepage' do
     visit root_path
 
     # expectativas do usuário após a ação
-    expect(page).to_not have_css('h1', text: pending_recipe.title)
-    expect(page).to have_css('h1', text: approved_recipe.title)
-    expect(page).to have_css('li', text: approved_recipe.recipe_type.name)
-    expect(page).to have_css('li', text: approved_recipe.cuisine)
-    expect(page).to have_css('li', text: approved_recipe.difficulty)
-    expect(page).to have_css('li', text: "#{approved_recipe.cook_time} minutos")
+    expect(page).to_not have_css('p', text: pending_recipe.title)
+    expect(page).to have_css('p', text: approved_recipe.title)
+    expect(page).to have_css('p', text: approved_recipe.recipe_type.name)
+    expect(page).to have_css('p', text: approved_recipe.cuisine)
+    expect(page).to have_css('p', text: approved_recipe.difficulty)
+    expect(page).to have_css('p', text: "#{approved_recipe.cook_time} minutos")
   end
 
   scenario 'and view recipes list' do
@@ -57,17 +57,17 @@ feature 'Visitor visit homepage' do
     visit root_path
 
     # expectativas do usuário após a ação
-    expect(page).to have_css('h1', text: approved_recipe.title)
-    expect(page).to have_css('li', text: approved_recipe.recipe_type.name)
-    expect(page).to have_css('li', text: approved_recipe.cuisine)
-    expect(page).to have_css('li', text: approved_recipe.difficulty)
-    expect(page).to have_css('li', text: "#{approved_recipe.cook_time} minutos")
+    expect(page).to have_css('p', text: approved_recipe.title)
+    expect(page).to have_css('p', text: approved_recipe.recipe_type.name)
+    expect(page).to have_css('p', text: approved_recipe.cuisine)
+    expect(page).to have_css('p', text: approved_recipe.difficulty)
+    expect(page).to have_css('p', text: "#{approved_recipe.cook_time} minutos")
 
-    expect(page).not_to have_css('h1', text: pending_recipe.title)
-    expect(page).not_to have_css('li', text: pending_recipe.recipe_type.name)
-    expect(page).not_to have_css('li', text: pending_recipe.cuisine)
-    expect(page).not_to have_css('li', text: pending_recipe.difficulty)
-    expect(page).not_to have_css('li', text: "#{pending_recipe.cook_time} minutos")
+    expect(page).not_to have_css('p', text: pending_recipe.title)
+    expect(page).not_to have_css('p', text: pending_recipe.recipe_type.name)
+    expect(page).not_to have_css('p', text: pending_recipe.cuisine)
+    expect(page).not_to have_css('p', text: pending_recipe.difficulty)
+    expect(page).not_to have_css('p', text: "#{pending_recipe.cook_time} minutos")
   end
 end
 

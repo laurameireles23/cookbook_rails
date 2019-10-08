@@ -1,21 +1,23 @@
 <h1>CookBook</h1>
 <p>Bem-vindo ao maior livro de receitas online</p>
-<div class='jumbotron bg-white'>
+<%= form_with(url: "/search", method: "get", local:true) do %>
+    <%= label_tag(:search, "Buscar pelo nome da receita") %>
+    <%= text_field_tag(:search) %>
+    <%= submit_tag("Buscar") %>
+  <% end %>
+<h1><%= link_to 'Cadastrar receita', new_recipe_type_path %></h1>
   <div class='row'>
-    <div class='col col-3'>
-    <h3>Tipo</h3>
-      <% @recipe_types.each do |types| %>
-        <h4><u><%= link_to types.name, types %></u></h4>
-      <% end %>
+    <div class='col col-2'>
+      <h3>Tipo</h3>
+        <% @recipe_types.each do |types| %>
+          <h4><u><%= link_to types.name, types %></u></h4>
+        <% end %>
     </div>
-    <div class='col col-9'>
-      <%= form_with(url: "/search", method: "get", local:true) do %>
-        <%= label_tag(:search, "Buscar pelo nome da receita") %>
-        <%= text_field_tag(:search) %>
-        <%= submit_tag("Buscar") %>
-      <% end %>
-      <h1><%= link_to 'Cadastrar receita', new_recipe_type_path %></h1>
+    <div class="col col-5">
+      <h2>Últimas receitas</h2>
       <%= render partial: 'recipe', collection: @recipes %>
     </div>
+    <div class="col col-5">
+      <h2>Favoritas dos usuários</h2>
   </div>
 </div>
