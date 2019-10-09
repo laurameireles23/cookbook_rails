@@ -4,7 +4,6 @@
     <title>Cookbook</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
@@ -61,6 +60,10 @@
     <div class='container-fluid'>
       <div class="row">
         <div class="col col-3">
+          <h3>Tipo</h3>
+            <% @recipe_types_sidebar.each do |types| %>
+              <h4><u><%= link_to types.name, types %></u></h4>
+            <% end %>
         </div>
       <div class="col col-9">
         <%= yield %>
