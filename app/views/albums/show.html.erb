@@ -6,8 +6,15 @@
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @album.user %>
+  <strong>Recipes:</strong>
+  <%= @album.recipes %>
+</p>
+
+<p>
+  <strong>Images:</strong>
+  <% @album.images.each do |image| %>
+  <%= image_tag image %>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_album_path(@album) %> |

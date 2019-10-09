@@ -1,3 +1,4 @@
 class Album < ApplicationRecord
-  belongs_to :user
+  belongs_to :recipes
+  has_many_attached :images
 end

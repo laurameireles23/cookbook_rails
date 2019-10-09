@@ -21,6 +21,12 @@ class AlbumsController < ApplicationController
   def edit
   end
 
+  def album_params
+    params.require(:album).permit(:title, :recipes_id, images:[])
+    
+  end
+  
+
   # POST /albums
   # POST /albums.json
   def create
@@ -69,6 +75,6 @@ class AlbumsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def album_params
-      params.require(:album).permit(:title, :user_id)
+      params.require(:album).permit(:title, :recipes_id)
     end
 end
