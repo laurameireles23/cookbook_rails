@@ -4,24 +4,41 @@
 
 
 <%= form_with model: recipe, local: true do |f| %>
-  <div class="form-group">
-    <%= f.label :title, 'Título' %> 
-    <%= f.text_field :title %>
-    <%= f.label :recipe_type_id, 'Tipo da Receita' %>
-    <%= f.collection_select(:recipe_type_id, @recipe_types, :id, :name) %>
-    <%= f.label :cuisine, 'Cozinha' %>
-    <%= f.text_field :cuisine %>
-    <%= f.label :difficulty, 'Dificuldade' %>
-    <%= f.text_field :difficulty %>
-    <%= f.label :cook_time, 'Tempo de Preparo' %>
-    <%= f.text_field :cook_time %>
-    <%= f.label :ingredients, 'Ingredientes' %>
-    <%= f.text_field :ingredients %>
-    <%= f.label :cook_method, 'Como Preparar' %>
-    <%= f.text_field :cook_method %>
-    <%= f.label :avatar %>
-    <%= f.file_field :avatar %>
-
-    <%= f.submit 'Enviar' %>
+  <div class="card bg-light py-3 px-4 m-2">
+    <div class="form-group row">
+      <%= f.label :title, 'Título', {class: 'col-2 col-form-label'} %> 
+      <%= f.text_field(:title, {class: 'col-10 form-control'}) %>
     </div>
+    <div class="form-group row">
+      <%= f.label :recipe_type_id, 'Tipo da Receita', {class: 'col-2 col-form-label'} %>
+      <%= f.collection_select :recipe_type_id, @recipe_types, :id, :name, {:include_blank => false},{class: "col-2 custom-select"} %>
+    </div>
+    <div class="form-group row">
+      <%= f.label :cuisine, 'Cozinha', {class: 'col-2 col-form-label'} %>
+      <%= f.text_field(:cuisine, {class: 'col-10 form-control'}) %>
+    </div>
+    <div class="form-group row">
+      <%= f.label :difficulty, 'Dificuldade', {class: 'col-2 col-form-label'} %>
+      <%= f.text_field(:difficulty, {class: 'col-10 form-control'}) %>
+    </div>
+    <div class="form-group row">
+      <%= f.label :cook_time, 'Tempo de Preparo', {class: 'col-2 col-form-label'} %>
+      <%= f.text_field(:cook_time, {class: 'col-10 form-control'}) %>
+    </div>
+    <div class="form-group row">
+      <%= f.label :ingredients, 'Ingredientes', {class: 'col-2 col-form-label'} %>
+      <%= f.text_field(:ingredients, {class: 'col-10 form-control'}) %>
+    </div>
+    <div class="form-group row">
+      <%= f.label :cook_method, 'Como Preparar', {class: 'col-2 col-form-label'} %>
+      <%= f.text_field(:cook_method, {class: 'col-10 form-control'}) %>
+    </div>
+    <div class="form-group row">
+      <%= f.label :avatar, {class: 'col-2 col-form-label'} %>
+      <%= f.file_field(:avatar, {class: 'col-10 form-control'}) %>
+    </div>
+    <div class="form-group row justify-content-center">
+      <%= f.submit 'Enviar', {class: 'btn btn-primary'} %>
+    </div>
+  </div>
 <% end %>

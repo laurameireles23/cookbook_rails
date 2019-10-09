@@ -3,10 +3,17 @@ require 'rails_helper'
 feature 'Admin register recipe type' do
   scenario 'successfully' do
     #Arrange
+    user = User.create!(email: 'visit@visit.com', password: '123456', role: :user)
+
 
     #Act
     visit root_path
-    click_on 'Cadastrar receita'
+    click_on 'Fazer Login'
+    fill_in "E-mail", with: "visit@visit.com"
+    fill_in "Senha", with: "123456"
+    click_on 'Logar'
+
+    click_on 'Cadastrar tipo de receita'
     fill_in "Nome", with: "Sobremesa"
     click_on 'Enviar'
 
@@ -16,9 +23,16 @@ feature 'Admin register recipe type' do
 
   scenario 'and must be unique' do
     RecipeType.create!(name: 'Sobremesa')
+    user = User.create!(email: 'visit@visit.com', password: '123456', role: :user)
 
+    #Act
     visit root_path
-    click_on 'Cadastrar receita'
+    click_on 'Fazer Login'
+    fill_in "E-mail", with: "visit@visit.com"
+    fill_in "Senha", with: "123456"
+    click_on 'Logar'
+
+    click_on 'Cadastrar tipo de receita'
     fill_in "Nome",	with: "Sobremesa" 
     click_on 'Enviar'
 
