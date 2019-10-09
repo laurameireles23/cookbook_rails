@@ -7,12 +7,6 @@
   <% end %>
 <h1><%= link_to 'Cadastrar receita', new_recipe_type_path %></h1>
   <div class='row'>
-    <div class='col col-2'>
-      <h3>Tipo</h3>
-        <% @recipe_types.each do |types| %>
-          <h4><u><%= link_to types.name, types %></u></h4>
-        <% end %>
-    </div>
     <div class="col col-5">
       <h2>Últimas receitas</h2>
       <%= render partial: 'recipe', collection: @recipes %>
