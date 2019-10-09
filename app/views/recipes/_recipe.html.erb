@@ -1,8 +1,9 @@
 <div class="card m-3 p-4" style="width: 400px">
   <div class="row">
-    <div class="col col-6 bg-light">
+    <div class="col col-4">
+        <%= image_tag recipe.avatar, class:"img-thumbnail float-left" if recipe.avatar.attached?%>
     </div>
-    <div class="col col-6">
+    <div class="col col-8">
       <p><%= link_to recipe.title, recipe %></p>
         <p>
           Tipo: <%= recipe.recipe_type.name %>
