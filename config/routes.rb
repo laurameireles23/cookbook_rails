@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :albums
   devise_for :users
   root to: 'recipes#index'
   resources :recipes, only: [:index, :show, :new, :create, :edit, :update] do
