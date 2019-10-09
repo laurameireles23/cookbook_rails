@@ -57,7 +57,7 @@ describe 'Recipes Api' do
         end
     end
 
-    context 'index' do
+    context 'show' do
         it 'view one recipe' do
             user = User.create!(email: 'visit@visit.com', password: '123456', role: :user)
             recipe_type = RecipeType.create(name: 'Entrada')
