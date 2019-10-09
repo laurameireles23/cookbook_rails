@@ -81,4 +81,22 @@ describe 'Recipes Api' do
             expect(json_recipes[:title]).not_to eq 'Tapioca de maniçoba'
         end
     end
+
+    context 'edit' do
+        it 'edit recipe' do
+            user = User.create!(email: 'visit@visit.com', password: '123456', role: :user)
+            recipe_type = RecipeType.create(name: 'Entrada')
+            recipe = Recipe.create(status: :pending, user: user, title: 'Tapioca apimentada', difficulty: 'Dificil',
+            recipe_type: recipe_type, cuisine: 'Baiana',
+            cook_time: 50, ingredients: 'Farinha de tapioca, pimenta',
+            cook_method: 'Hidrate a goma, prepare na frigideira a tapioca, encha de pimenta e sirva')
+
+            patch api_v1_recipe_path(recipe), params: {title: 'Tapioca sem pimenta'}
+
+            json_recipes = JSON.parse(response.body, symbolize_names: true)
+
+            expect(response).to have_http_status(:ok)
+            expect(response.content_type).to eq 'application/json'
+        end
+    end
 end
