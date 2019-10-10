@@ -39,9 +39,15 @@
 <% end %>
 <div class="row ">
     <div class="col col-4 ">
-        <% if @recipe.user == current_user%>
+      <% unless current_user.nil? %>
+        <% if @recipe.user == current_user || current_user.admin?%>
             <%= link_to 'Editar', edit_recipe_path(@recipe), class:"btn btn-outline-primary rounded" %>
         <% end %>
-        <%= link_to 'Voltar', root_path, class:"btn btn-outline-dark rounded" %>
+
+        <% if current_user.admin?%>
+          <%= link_to 'Apagar', @recipe, method: :delete, class:"btn btn-outline-danger rounded" %>
+        <% end %>
+      <% end %>
+      <%= link_to 'Voltar', root_path, class:"btn btn-outline-dark rounded" %>
     </div>
 </div>

@@ -121,6 +121,8 @@ feature 'User update recipe' do
 
     # Assert
     expect(page).not_to have_link('Editar')
+    expect(page).not_to have_link('Apagar')
+
 
   end
 end

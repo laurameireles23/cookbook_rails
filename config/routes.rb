@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :albums
   devise_for :users
   root to: 'recipes#index'
-  resources :recipes, only: [:index, :show, :new, :create, :edit, :update] do
+  resources :recipes, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
     post 'add_to_list', on: :member
     member do
       post 'approve'
@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get 'evaluate_recipes', to: 'recipes#evaluate'
 
   get 'my_recipes', to: 'users#show'
+
 
   namespace 'api' do
     namespace 'v1' do

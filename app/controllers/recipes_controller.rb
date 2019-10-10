@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update] 
-  before_action :set_recipe, only: [:show, :edit, :update, :add_to_list, :approve, :reject]
+  before_action :set_recipe, only: [:show, :edit, :update, :add_to_list, :approve, :reject, :destroy]
 
   def index
     @recipes = Recipe.approved
@@ -60,7 +60,15 @@ class RecipesController < ApplicationController
       render :show
       flash[:notice] = 'Essa receita já foi adicionada anteriormente'
     end
+  end
 
+  def destroy
+    if @recipe.destroy
+      redirect_to root_path
+      flash[:notice] = 'Receita apagada com sucesso'
+    else
+      flash[:notice] = 'Não foi possivel deletar sua receita'
+    end
   end
 
   def evaluate

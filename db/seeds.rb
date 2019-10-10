@@ -12,6 +12,7 @@ type_principal = RecipeType.create(name: 'Prato principal')
 type_entrada = RecipeType.create(name: 'Entrada')
 
 
+
 Recipe.create(user: user, title: 'Bolo de cenoura', difficulty: 'Médio',
               recipe_type: type_sobremesa, cuisine: 'Brasileira',
               cook_time: 50,
@@ -45,3 +46,9 @@ Recipe.create(user: user, title: 'Feijoada', difficulty: 'Difícil',
               cook_method: 'Misture o sushi com as carnes',
               status: :pending)
 
+Recipe.create(user: user, title: 'Bolonha', difficulty: 'Traficante',
+              recipe_type: type_principal, cuisine: 'Jamaicana',
+              cook_time: 420,
+              ingredients: 'bolo pronto, brigadeiro e maconha (torrada ou concentrada)',
+              cook_method: 'Faça o bolo, o brigadeiro, misture eles e jogue muita maconha pelo bolo todo',
+              status: :pending)
