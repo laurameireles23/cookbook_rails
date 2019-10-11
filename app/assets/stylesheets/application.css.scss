@@ -1,14 +1,16 @@
 @import  "bootstrap" ;
 
-.card-footer {
-    position: relative;
-    padding: 2.75rem 1.25rem !important; 
-    font-size: 1.5em;
-    background-color: #cc8400 !important;
-}
-
 .icons {
-    position: absolute;
     top: 4.65rem;
     font-size: 2em;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #cc8400;
+    color: white;
+    text-align: center;
 }
