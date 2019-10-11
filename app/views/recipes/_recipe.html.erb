@@ -4,7 +4,7 @@
         <%= image_tag recipe.avatar, class:"img-thumbnail float-left" if recipe.avatar.attached?%>
     </div>
     <div class="col col-8">
-      <p><%= link_to recipe.title, recipe %></p>
+      <h4 class="text-secondary"><%= link_to recipe.title, recipe, class:"text-success" %></h4>
         <p>
           Tipo: <%= recipe.recipe_type.name %>
           Cozinha: <%= recipe.cuisine %>
