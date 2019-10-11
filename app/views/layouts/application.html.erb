@@ -11,13 +11,11 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success py-3">
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
+        <ul class="navbar-nav font-weight-bold">
+          <li class="nav-item">
             <a class="nav-link" href="<%=root_path%>">Inicio</a>
           </li>
           <% if user_signed_in? %>
@@ -59,24 +57,28 @@
       </div>
           <%= form_with url: "/search", method: "get", local:true, class: 'form-inline d-flex justify-content-end' do |f| %>
             <%= f.text_field :search, class: "form-control", placeholder: "Buscar pelo nome da receita" %>
-            <%= f.submit "Buscar", class: "btn btn-secondary" %>
+            <%= f.submit "Buscar", class: "btn btn-success border mx-2" %>
             </div>
           <% end %>
     </nav>
 
     <div class='container-fluid'>
       <div class="row">
-        <div class="col col-3">
-          <h3>Tipo</h3>
+        <div class="col col-2 bg-secondary p-4">
+          <h2 class="text-white">Tipo</h2>
             <% @recipe_types_sidebar.each do |types| %>
-              <h4><u><%= link_to types.name, types %></u></h4>
+              <h4><u><%= link_to types.name, types, class:'text-light' %></u></h4>
             <% end %>
         </div>
-      <div class="col col-9">
-        <%= yield %>
-      </div>
+        <div class="col col-10 bg-light p-4">
+          <%= yield %>
+          <span class="bg-light"><%= notice %></span>
+          <span class="bg-light"><%= alert %></span>
+          </div>
+        </div>
       </div>
     </div>
+
     <div class="card-footer d-flex sticky-bottom justify-content-center">
       <p>Social Recipes | Copyright 2019</p>
       <div class="icons">
