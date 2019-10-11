@@ -22,9 +22,9 @@ feature 'User find recipe by name' do
     click_on 'Buscar'
 
     #Assert
-    expect(page).to have_css('h1', text: 'Bolo de abobora')
-    expect(page).to have_css('h3', text: 'Sobremesa')
-    expect(page).not_to have_css('h1', text: 'Bolo de cenoura')
+    expect(page).to have_content('Bolo de abobora')
+    expect(page).to have_content('Sobremesa')
+    expect(page).not_to have_content('Bolo de cenoura')
     
     end
 
@@ -64,10 +64,10 @@ feature 'User find recipe by name' do
         click_on 'Buscar'
     
         #Assert
-        expect(page).to have_css('h3', text: 'Foram encontrados 2 resultados conforme a busca')
-        expect(page).to have_css('h1', text: 'Bolo de cenoura')
-        expect(page).to have_css('h1', text: 'Bolo de abobora')
-        expect(page).not_to have_css('h1', text: 'Torta de abacate')
+        expect(page).to have_content('Foram encontrados 2 resultados conforme a busca')
+        expect(page).to have_content('Bolo de cenoura')
+        expect(page).to have_content('Bolo de abobora')
+        expect(page).not_to have_content('Torta de abacate')
         end
 
 end

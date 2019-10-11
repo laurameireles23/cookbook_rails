@@ -5,9 +5,12 @@
     <% end %>
 <% end %>
 
-<%= form_with model: @recipe_type, local: true do |r| %>
-    <%= r.label :name, 'Nome' %> 
-    <%= r.text_field :name %>
-
-    <%= r.submit 'Enviar' %>
+<%= form_with model: @recipe_type, local: true do |f| %>
+  <div class="row">
+    <div class="col col-4">
+      <%= f.label :name, 'Nome', class:'form-label' %> 
+      <%= f.text_field :name , class:'form-control'%>
+      <%= f.submit 'Enviar' , class:'btn btn-primary my-4'%>
+    </div>
+  </div>
 <% end %>

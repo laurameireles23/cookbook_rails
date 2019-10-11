@@ -22,9 +22,9 @@ feature "user view your recipes after auth" do
         click_on 'Logar'
         click_on "Minhas receitas"
 
-        expect(page).to have_css('h1', text: 'Minhas receitas')
-        expect(page).to have_css('h2', text: 'Bolo de Brócolis')
-        expect(page).to have_css('h2', text: 'Torta de Cactus')
+        expect(page).to have_content('Minhas receitas')
+        expect(page).to have_content('Bolo de Brócolis')
+        expect(page).to have_content('Torta de Cactus')
     end
     
 end

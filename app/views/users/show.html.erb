@@ -1,10 +1,6 @@
 <h1>Minhas receitas</h1>
-<% @user.recipes.each do |recipe| %>
-	<h2><%= link_to recipe.title, recipe %></h2>
-  <ul>
-    <li><%= recipe.recipe_type.name %></li>
-    <li><%= recipe.cuisine %></li>
-    <li><%= recipe.difficulty %></li>
-    <li><%= "#{recipe.cook_time} minutos" %></li>
-  </ul>
-<% end %>
+  <div class="d-flex flex-wrap justify-content-around">
+    <% @user.recipes.each do |recipe| %>
+      <%= render partial: 'recipes/recipe', locals: {recipe: recipe} %>
+    <% end %>
+  </div>
