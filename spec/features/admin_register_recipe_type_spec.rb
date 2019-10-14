@@ -40,7 +40,7 @@ feature 'Admin register recipe type' do
     expect(RecipeType.count).to eq 1
   end
 
-  xscenario 'and approve recipes' do
+  scenario 'and approve recipes' do
     user = User.create!(email: 'visit@visit.com', password: '123456', role: :user)
     admin = User.create!(email: 'admin@admin.com', password: '123456', role: :admin)
     recipe_type = RecipeType.create(name: 'Entrada')
@@ -61,7 +61,6 @@ feature 'Admin register recipe type' do
     end
 
     expect(page).to have_content('Receita aprovada com sucesso') 
-    recipes.reload
     expect(page).not_to have_content('Tapioca apimentada') 
 
   end
